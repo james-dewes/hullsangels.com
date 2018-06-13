@@ -1,0 +1,121 @@
+@import url(//fonts.googleapis.com/css?family=Allerta%20Stencil);.responsive-calendar .controls {
+  text-align: center;
+}
+
+.responsive-calendar .controls a {
+  cursor: pointer;
+}
+
+.responsive-calendar .controls h4 {
+  display: inline;
+}
+
+.responsive-calendar .day-headers,
+.responsive-calendar .days {
+  font-size: 0;
+}
+
+.responsive-calendar .day {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  width: 14.285714285714286%;
+  text-align: center;
+}
+
+.responsive-calendar .day a {
+  color: #000000;
+  display: block;
+  cursor: pointer;
+  padding: 20% 0 20% 0;
+}
+
+.responsive-calendar .day a:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.responsive-calendar .day.header {
+  border-bottom: 1px gray solid;
+}
+
+.responsive-calendar .day.active a {
+  background-color: #1d86c8;
+  color: #ffffff;
+}
+
+.responsive-calendar .day.active a:hover {
+  background-color: #36a0e2;
+}
+
+.responsive-calendar .day.active .not-current {
+  background-color: #8fcaef;
+  color: #ffffff;
+}
+
+.responsive-calendar .day.active .not-current:hover {
+  background-color: #bcdff5;
+}
+
+.responsive-calendar .day.not-current a {
+  color: #ddd;
+}
+
+.responsive-calendar .day .badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  padding-top: 2em;
+}
+
+footer {
+  text-align: right;
+}
+
+.jumbotron {
+  background-image: url("/img/hulls_angels.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f0f0f5;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.jumbotron h1 {
+  font-family: 'Allerta Stencil';
+}
+
+.jumbotron p {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+nav {
+  background-color: #660088;
+  font-weight: bold;
+}
+
+btn-primary {
+  background-color: #660088;
+}
+
+.stencil {
+  font-family: 'Allerta Stencil';
+}
+
+nav.admin {
+  background-color: #f4c242;
+  color: white;
+}
+

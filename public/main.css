@@ -1,0 +1,279 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 21-Mar-2015, 15:01:08
+    Author     : James Dewes
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+}
+html {
+height: 100%;
+min-height:100%;
+text-align: center;
+}
+@font-face {
+    font-family: 'Allerta Stencil';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Allerta Stencil Regular'), local('AllertaStencil-Regular'), url(http://fonts.gstatic.com/s/allertastencil/v7/CdSZfRtHbQrBohqmzSdDYHyjZGU_SYMIAZWjSGDHnGA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/allertastencil/v7/CdSZfRtHbQrBohqmzSdDYHPCKOCMXSfEg7NxhSsqpWM.woff) format('woff');
+}
+body{
+    background-color:#FFFFFF;
+    font-family: 'Allerta Stencil', sans-serif;
+    height: 100%;
+    min-height:100%;
+    text-align: left;
+}
+img{
+    width: auto;
+    height: auto;
+}
+header{
+    background-color: #660088;
+    color: white;
+    padding: 2em;
+    padding-bottom: 0px;
+
+}
+header{
+    text-align: center;
+}
+header h1{
+    font-size: 2em;
+    text-align: center;
+    }
+header p{
+    display: block;
+    clear:right;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+@media (min-width: 600px) {
+    header{
+        text-align: left;
+    }
+    header img{
+        float: left;
+    }
+    header h1{
+        text-align: left;
+    }
+    header p{
+        text-align: left;
+    }
+}
+nav{
+    font-size: 1.5em;
+    //text-align: center;
+}
+nav ul{
+    background-color: #660088;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    list-style: none;
+    white-space: nowrap;
+    overflow: no-display;
+}
+@media (min-width: 600px) {
+    nav li, nav li:hover{
+        display: inline;
+    }
+    nav ul{
+        padding-bottom: 0em;
+    }
+    header p{
+        display: inline;
+        clear:none;
+    }
+}
+nav li{
+    padding: 0.25em;
+    border: 1px solid white;
+    text-align: center;
+}
+
+nav a{
+    padding: 0.25em;
+    color: white;
+    text-decoration: none;
+}
+nav li:hover, nav li:hover a {
+    color: #660088;
+    background-color: white;
+    text-decoration: none;
+
+}
+/* THE CURRENT PAGE */
+nav .active a, nav .active{
+    text-decoration: none;
+    color: #660088;
+    background-color: white;
+}
+nav .active a:hover, nav .active li:hover{
+    color: #660088;
+    background-color: white;
+}
+
+main{
+    width: 80%;
+    height: 100%;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+}
+main h1, main h2{
+    padding-bottom: 1%;
+}
+main h1, main h2{
+    padding-top: 5%;
+}
+main h2{
+    padding-top: 2%;
+}
+main p{
+    padding: 0.5%;
+}
+main img{
+    margin: 1em;
+    display: inline-block;
+
+}
+main .right{
+    text-align: center;
+}
+main .right img{
+    width: 15em;
+}
+@media (min-width: 600px) {
+    main .right img{
+        width: auto;
+        margin: 1em;
+        display: inline-block;
+        float: right;
+
+
+    }
+}
+
+footer{
+   border-top: 1px solid black;
+   height: 5%;
+   padding: 2em;
+   margin-top: 2em;
+   text-align:right;
+   font-size: 0.75em;
+   width: 100%;
+}
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-style: italic;
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
+}
+.cookiePolicy {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #660088;
+    color: #fff;
+    z-index: 10000;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 2em;
+}
+.cookiePolicy a {
+    color: #fff;
+    text-decoration: underline
+}
+.cookiePolicy a:hover {
+    cursor: pointer;
+}
+#map-canvas { height: 100%; margin: 0; padding: 0;}
+.calender{
+    border-collapse: collapse;
+    border: solid 1px  black;
+
+}
+.calender th, .calender td{
+    border: solid 1px  black;
+
+
+}
+.calender td{
+    width: 4em;
+    height: 4em;
+}
+html, body, main, #map-canvas {
+    height: 100%;
+}
+#map-canvas {
+
+                height: 50%;
+                width: 80%;
+                margin: 2em auto 2em auto;
+                padding: 1em;
+                display: block;
+                clear: both;
+}
+.address{
+    padding: 1em;
+    border: grey 0.25em dashed;
+    margin: 2em auto 2em auto;
+}
+.faq dt{
+    font-weight: bold;
+}
+.faq dd{
+    margin-bottom: 1em;
+}
+.bold{
+  font-weight: bold;
+}
+article{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #eee;
+    border-radius: 1em;
+
+}
+article p{
+    padding-bottom: 1em;
+}
+article img{
+    width: 15em;
+}
+@media (min-width: 600px) {
+    article img{
+    width: auto;
+}
+}
+.archive article{
+    display: hidden;
+
+}
+article ul{
+    list-style: none;
+}

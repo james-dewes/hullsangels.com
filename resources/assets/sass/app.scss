@@ -1,0 +1,48 @@
+
+// Fonts
+@import url("//fonts.googleapis.com/css?family=Allerta%20Stencil");
+
+// Variables
+@import "variables";
+@import "calander";
+
+*{
+  font-family: sans-serif;
+}
+body {
+  padding-top: 2em;
+}
+footer{
+  text-align: right;
+}
+.jumbotron {
+    background-image: url("/img/hulls_angels.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #f0f0f5;
+        text-shadow: black 0.3em 0.3em 0.3em;
+}
+.jumbotron h1{
+	font-family: 'Allerta Stencil';
+}
+.jumbotron p{
+  font-size: 1.5em;
+}
+h2{
+	font-weight: bold;
+}
+nav{
+    background-color: #660088;
+    font-weight: bold;
+}
+btn-primary{
+      background-color: #660088;
+}
+.stencil{
+    	font-family: 'Allerta Stencil';
+}
+ nav.admin{
+    background-color: #f4c242;
+    color: white;
+}
