@@ -2,7 +2,7 @@
 @section('meta')
     <meta name="description" value="Visit Hulls Angels to join in games of Warhammer 40k, Bolt Action, Warmachine, Age of Sigmar, Necromunda, Blood Bowl, Dreadball, Kings of War Malifaux and more.">
     <meta name="keywords" value="warhammer 40k, warhammer 40000, aos, age of sigmar, necromunda, mordhiem, warmachine, hordes, bolt action, rumbleslam, shadow war,blood bowl, dreadball">
-    <title>Game Systems at Hulls Angels</title>
+    <title>Hulls Angels | Terms and Conditions</title>
 @endsection
 @section('title')
 Terms and conditions
