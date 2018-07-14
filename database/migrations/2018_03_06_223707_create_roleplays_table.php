@@ -15,6 +15,7 @@ class CreateRoleplaysTable extends Migration
     {
         Schema::create('roleplays', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
