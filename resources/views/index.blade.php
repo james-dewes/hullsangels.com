@@ -19,7 +19,7 @@
             <h3>{{$news->title}}</h3>
             <p>{{$news->created_at->toFormattedDateString()}}</p>
             <p>{{$news->content}}</p>
-            <p><a class="btn btn-secondary" href="/news/{{$news->id}}" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="/news/{{$news->slug}}" role="button">View details &raquo;</a></p>
           </div>
           <div class="col-md-8">
             <div class="row">

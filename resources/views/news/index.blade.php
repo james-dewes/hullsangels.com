@@ -18,7 +18,7 @@
        <h2 class="stencil">{{$article->title}}</h2>
 
        <p>{{$article->content}}</p>
-       <a class="btn btn-secondary" href="/news/{{$article->id}}" role="button">View details »</a>
+       <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">View details »</a>
      </div>
   </div>
 @endforeach

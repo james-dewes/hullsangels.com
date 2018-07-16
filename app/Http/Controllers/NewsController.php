@@ -11,18 +11,37 @@ class NewsController extends Controller
       $articles = News::latest()->take(10)->get();
       return view('news.index',compact('articles'));
     }
-    function show(News $article){
+    function show($slug){
+      // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
+      $article = News::whereSlug($slug)->firstOrFail();
       return view('news.show',compact('article'));
     }
     function create(){
       return view('news.create');
     }
-    function store(){
-      $this->validate(request(), [
+    function store(Request $request){
+      $this->validate($request, [
         'title'=> 'required',
         'content'=> 'required',
+        'user_id'=> 'required',
       ]);
-      News::create(request(['title','content']));
-      return redirect('/');
+      $article = new News;
+      $article->title = $request->title;
+      $article->content = $request->content;
+      $article->user_id = $request->user_id;
+      $article->slug = str_slug($request->title);
+
+      //TODO tidy this up
+      $latestSlug = News::whereRaw("slug RLIKE '^{$article->slug}(-[0-9]*)?$'")
+        ->latest('id')
+        ->value('slug');
+        //dd($latestSlug);
+      if($latestSlug){
+        $pieces = explode('-',$latestSlug);
+        $number = intval(end($pieces));
+        $article->slug .= '-' . ($number + 1);
+      }
+      $article->save();
+      return redirect("/news/{$article->slug}");
     }
 }
