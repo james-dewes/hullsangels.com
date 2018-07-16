@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
   <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">Hulls Angels</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsHullsAngels" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsHullsAngels" aria-controls="navbarsHullsAngels" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 

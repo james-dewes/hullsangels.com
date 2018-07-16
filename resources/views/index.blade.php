@@ -25,7 +25,7 @@
             <div class="row">
               <div class="col-md-12">
                 <h2>Welcome to Hulls Angels</h2>
-                <p>Hulls Angels is one of the largest wargaming clubs in the north east with more than 200 members. Open three nights a week and on weekends Hulls Angels' permanent gaming space boasts more than 20 gaming tables as well as soft seating for role playing, tables for hobby activities, board games, card based games and a painting bar.</p>
+                <p>Hulls Angels is one of the largest wargaming clubs in the north east with more than 200 members. Open two nights a week and on weekends Hulls Angels' permanent gaming space boasts more than 20 gaming tables as well as soft seating for role playing, tables for hobby activities, board games, card based games and a painting bar.</p>
               </div>
               <div class="col-md-12">
                 <h2>Friendly space to game</h2>
