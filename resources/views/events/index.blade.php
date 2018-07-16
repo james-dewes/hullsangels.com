@@ -13,9 +13,12 @@
     <div class="row">
       <div class="col-md-8">
         <h2 class="stencil">{{$event->name}}</h2>
-        <p class='date'>{{$event->start->toDayDateTimeString()}}</p>
-        <p class='date'>{{$event->end->toDayDateTimeString()}}</p>
+        <p class='date'>{{$event->start}}</p>
+        <p class='date'>{{$event->end}}</p>
         <p>{{$event->description}}</p>
+        <p>
+          <a class="btn btn-secondary" href="events/{{$event->slug}}" role="button">See more »</a>
+        </p>
       </div>
     </div>
     @endforeach

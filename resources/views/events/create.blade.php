@@ -11,7 +11,7 @@
         {{csrf_field()}}
       <div class="form-group">
         <label for="name">Event Name</label>
-        <input type="text" class="form-control" id="title" placeholder="Title" name="title" required>
+        <input type="text" class="form-control" id="name" placeholder="Title" name="name" required>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
@@ -19,15 +19,16 @@
       </div>
       <div class="form-group">
         <label for="start">Start</label>
-        <input type="datetime-local" name="start" id="start" class="form-control" rows="8" cols="80" required>
+        <input type="datetime-local" name="start" id="start" class="form-control" required>
       </div>
       <div class="form-group">
-        <label for="end">Description</label>
-        <input type="datetime-local" name="end" id="end" class="form-control" rows="8" cols="80" required>
+        <label for="end">End</label>
+        <input type="datetime-local" name="end" id="end" class="form-control" required>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Publish</button>
       </div>
+      <input type="hidden" name="user_id" value="1">
       @include('layouts.errors')
       </form>
     </div>

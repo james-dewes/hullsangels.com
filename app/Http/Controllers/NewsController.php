@@ -42,6 +42,6 @@ class NewsController extends Controller
         $article->slug .= '-' . ($number + 1);
       }
       $article->save();
-      return redirect("/news/{$article->slugd}");
+      return redirect("/news/{$article->slug}");
     }
 }

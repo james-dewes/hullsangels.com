@@ -3,13 +3,18 @@
 <div class="container">
  <div class="row">
    <div class="col-md-12">
-       <h1 class="mt-5 stencil">{{$article->title}}</h1>
-       <p class='date'>{{$article->created_at->toFormattedDateString()}}</p>
+       <h1 class="mt-5 stencil">{{$event->title}}</h1>
+       <p>Start
+          <span class='date'>{{$event->start}}</span>
+       </p>
+       <p>End
+          <span class='date'>{{$event->start}}</span>
+       </p>
        <hr>
      </div>
  </div>
  <div class="row">
    <div class="col-md-8">
-       <p>{{$article->content}}</p>
+       <p>{{$event->description}}</p>
  </div>
 @endsection
