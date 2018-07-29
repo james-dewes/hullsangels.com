@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-    <meta name="description" value="News from Hulls Angels, news and updates from the Hulls Angels Wargaming club.">
-    <meta name="keywords" value="hulls angels, news, updates">
+    <meta name="description" content="News from Hulls Angels, news and updates from the Hulls Angels Wargaming club.">
+    <meta name="keywords" content="hulls angels, news, updates">
     <title>Hulls Angels Opening News</title>
 @endsection
 @section('title')
