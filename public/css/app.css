@@ -76,9 +76,7 @@ body {
   padding-top: 2em;
 }
 
-footer {
-  text-align: right;
-}
+
 
 .jumbotron {
   background-image: url("/img/hulls_angels.jpg");
@@ -118,4 +116,3 @@ nav.admin {
   background-color: #f4c242;
   color: white;
 }
-

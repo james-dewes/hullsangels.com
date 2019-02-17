@@ -13,9 +13,9 @@
             };
             var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
             var beachMarker = new google.maps.Marker({
-              position: new google.maps.LatLng(53.747214, -0.336104);,
+              position: new google.maps.LatLng(53.747214, -0.336104),
               map: map,
-              icon: 'images/map.png';
+              icon: 'images/map.png'
             });
           }
         google.maps.event.addDomListener(window, 'load', initialize);
