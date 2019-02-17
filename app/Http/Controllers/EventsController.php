@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events;
 use Illuminate\Http\Request;
+use Calender;
 
 class EventsController extends Controller
 {
@@ -15,7 +16,35 @@ class EventsController extends Controller
     public function index()
     {
         $events = Events::all();
-        return view('events/index',compact('events'));
+        $events_list = [];
+        foreach ($events as $key => $event) {
+          $event_list[] = Calender::event(
+            $event->name,
+            false,
+            new \DateTime($event->start),
+            new \DateTime($event->end),
+            1,
+            [
+              'url'=>'/events/'.$event->slug,
+              'description'=> $event->description,
+            ]
+          );
+        }
+        $calendar_details = Calender::addEvents($event_list);
+        $calendar_details->setOptions(
+          [ 'defaultView'=>'agendaWeek',
+            'businessHours'=> true, // TODO: make an object for this
+            'nowIndicator'=> true, //TODO fix this
+            'now' => (new \DateTime())->format('Y-m-d\TH:i:s'),
+            'eventColor' => '#6610f2',
+            'eventTextColor' => '#ffffff',
+            'displayEventEnd'=>true,
+            'eventRender'=> 'function(event, element) {}',
+          ]
+        )->setCallbacks([ 'eventRender'=> 'function(event, element) { element.children().last().append(
+          \'<div class="eventDiscription col-md-4">\'+event.description+\'</span>\'
+        );}']);
+        return view('events/index',compact('calendar_details'));
     }
 
     /**

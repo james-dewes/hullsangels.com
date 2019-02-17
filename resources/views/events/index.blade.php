@@ -3,24 +3,30 @@
 @section('meta')
 <meta name="description" value="Hulls Angels Events Calender. Check the latest events, download rules packs, check timings and more.">
 <meta name="keywords" value="hulls angels, events, hull events, hull whats on">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.css" media="print">
 <title>Hulls Angels Events</title>
 @endsection
 @section('title')
   Events at Hulls Angels
 @endsection
 @section('content')
-  @foreach ($events as $event)
-    <div class="row">
-      <div class="col-md-8">
-        <h2 class="stencil">{{$event->name}}</h2>
-        <p class='date'>{{$event->start}}</p>
-        <p class='date'>{{$event->end}}</p>
-        <p>{{$event->description}}</p>
-        <p>
-          <a class="btn btn-secondary" href="events/{{$event->slug}}" role="button">See more »</a>
-        </p>
-      </div>
-    </div>
-    @endforeach
+  <div class="container">
+    <div class="pannel pannel-primary">
 
+      <div class="pannel-body">
+      </div>
+      {!! $calendar_details->calendar() !!}
+    </div>
+  </div>
+@endsection
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" ></script>
+<script src='https://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+    {!! $calendar_details->script() !!}
+<script type="text/javascript">
+$('#calendar').fullCalendar({
+  defaultView: 'basicWeek'
+});
+</script>
 @endsection
