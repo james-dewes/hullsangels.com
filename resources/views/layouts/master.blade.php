@@ -11,11 +11,14 @@
 </head>
 <body>
     @include('layouts.nav')
-    <main role="main" class="container">
-      <h1 class="mt-5 stencil">
-      @yield('title')
-      </h1>
-      <hr>
+    <main class="container">
+      @if (!Request::is('/'))
+        <h1 class="mt-5 stencil">
+        @yield('title')
+        </h1>
+        <hr>
+      @endif
+
       @yield('content')
     </main>
 
