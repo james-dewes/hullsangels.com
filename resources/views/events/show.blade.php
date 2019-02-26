@@ -1,4 +1,12 @@
 @extends('layouts.master')
+@section('meta')
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hullsangels_wargaming">
+<meta name="twitter:creator" content="@hullsangels_wargaming">
+<meta name="twitter:text:title" content="{{$event->title}}">
+<meta name="twitter:description" content="{{$event->title}} from {{$event->start}}">
+<meta name="twitter:image" content="https://hullsangels.com/img/logo.png">
+@endsction
 @section('content')
 <div class="container">
  <div class="row">
