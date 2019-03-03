@@ -11,7 +11,7 @@
 <div class="container" itemscope itemtype="https://schema.org/Event">
  <div class="row">
    <div class="col-md-12">
-       <h1 class="mt-5 stencil" itemprop="name">{{$event->title}}</h1>
+       <h1 class="mt-5 stencil" itemprop="name">{{$event->name}}</h1>
        <p>Start
           <span class='date' itemprop="startDate">{{$event->start}}</span>
        </p>

@@ -26,7 +26,7 @@
     {!! $calendar_details->script() !!}
 <script type="text/javascript">
 $('#calendar').fullCalendar({
-  defaultView: 'basicWeek'
+  defaultView: 'basicWeek',
 });
 </script>
 @endsection
