@@ -7,7 +7,7 @@
 @section('content')
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Hulls Angels Wargaming Club</h1>
+          <h1>Hulls Angels Wargaming Club</h1>
           <p>Hull's foremost wargaming club</p>
         </div>
       </div>
