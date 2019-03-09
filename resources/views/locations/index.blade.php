@@ -6,19 +6,28 @@
             src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_API')}}">
     </script>
     <script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: {lat: 53.7470172, lng: -0.3363777},
-                zoom: 15
-            };
-            var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-            var beachMarker = new google.maps.Marker({
-              position: new google.maps.LatLng(53.747214, -0.336104),
-              map: map,
-              icon: 'images/map.png'
+    function initialize() {
+        var myLatLng = {lat: 53.747277, lng: -0.336116};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 14
+        });
+        var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: 'img/map.png'
+    });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: myLatLng,
+              pov: {
+                heading: 170,
+                pitch: 10
+              }
             });
-          }
-        google.maps.event.addDomListener(window, 'load', initialize);
+        map.setStreetView(panorama);
+      }
+    google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 @endsection
 @section('title')
