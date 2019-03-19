@@ -76,8 +76,6 @@ body {
   padding-top: 2em;
 }
 
-
-
 .jumbotron {
   background-image: url("/img/hulls_angels.jpg");
   background-size: cover;
@@ -86,11 +84,6 @@ body {
   color: #f0f0f5;
   text-shadow: black 0.3em 0.3em 0.3em;
 }
-
-.jumbotron h1 {
-  font-family: 'Allerta Stencil';
-}
-
 .jumbotron p {
   font-size: 1.5em;
 }
