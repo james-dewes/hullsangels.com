@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#660088">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="author" content="James Dewes">
@@ -15,7 +15,7 @@
     @include('layouts.nav')
     <main class="container">
       @if (!Request::is('/'))
-        <h1 class="mt-5 stencil">
+        <h1>
         @yield('title')
         </h1>
         <hr>

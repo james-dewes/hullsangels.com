@@ -11,10 +11,12 @@
  @foreach ($articles as $article)
    <div class="row">
      <div class="col-md-8">
-       <h2 class="stencil">{{$article->title}}</h2>
-
-       <p>{{$article->content}}</p>
-       <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">View details »</a>
+       <article>
+         <h2 class="stencil">{{$article->title}}</h2>
+         <p class='date'>{{$article->created_at->toFormattedDateString()}}</p>
+         <p>{{$article->content}}</p>
+         <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">View details »</a>
+       </article>
      </div>
   </div>
   @endforeach

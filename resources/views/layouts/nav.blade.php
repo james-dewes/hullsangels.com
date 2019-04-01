@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-  <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">Hulls Angels</a>
+<nav class="navbar navbar-expand-md navbar fixed-top">
+  <!-- <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">Hulls Angels</a> -->
+  <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">
+    <img src="/img/logo.png" style="max-width: 100%;height: auto;PADDING:0PX;max-height:4rem;object-fit: scale-down;" alt="">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsHullsAngels" aria-controls="navbarsHullsAngels" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsHullsAngels">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/" >Home<span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/news">News</a>
       </li>
