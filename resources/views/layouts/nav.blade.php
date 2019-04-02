@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar fixed-top">
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
   <!-- <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">Hulls Angels</a> -->
   <a class="navbar-brand"  title="Hulls Angels Wargaming" href="/">
     <img src="/img/logo.png" style="max-width: 100%;height: auto;PADDING:0PX;max-height:4rem;object-fit: scale-down;" alt="">

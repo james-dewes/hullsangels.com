@@ -1,4 +1,6 @@
-@import url(//fonts.googleapis.com/css?family=Allerta%20Stencil);.responsive-calendar .controls {
+@import url(//fonts.googleapis.com/css?family=Allerta%20Stencil);
+@import url('https://fonts.googleapis.com/css?family=Play');
+.responsive-calendar .controls {
   text-align: center;
 }
 .responsive-calendar .controls a {
@@ -73,6 +75,7 @@
 
 body {
   padding-top: 7rem;
+    font-family: 'Play', sans-serif;
 }
 
 .jumbotron {
@@ -87,8 +90,8 @@ body {
   font-size: 1.5em;
 }
 
-h2 {
-  font-weight: bold;
+h2 {jalla+One
+  font-weight: bold;jalla+One
 }
 
 nav {
@@ -107,4 +110,8 @@ btn-primary {
 nav.admin {
   background-color: #f4c242;
   color: white;
+}
+h1{
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
 }
