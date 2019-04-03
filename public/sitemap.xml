@@ -1,0 +1,56 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+            https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://hullsangels.com/</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/news</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/events</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/find</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/opening-times</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/faq</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/wargaming</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/roleplaying</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hullsangels.com/contact</loc>
+  <lastmod>2018-03-17T00:33:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+</urlset>

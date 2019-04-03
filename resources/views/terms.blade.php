@@ -16,5 +16,4 @@ Terms and conditions
   <li>The maintaince and upkeep of the website (e.g. which parts are used most)</li>
 </ul>
 <p>From time to time we may also contact you via email regarding sepecific events, but only with your prior concent.</p>
-<p>To find out the information held by us please subimit a subject access request under the membership subject via the <a href="contact">contact form</a></p>
 @endsection

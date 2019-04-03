@@ -69,9 +69,6 @@ Route::get('/roleplaying', 'RoleplayController@index');
 //Route::patch('/roleplaying/{system}', 'RoleplayController@update');
 //Route::delete('/roleplaying/{system}', 'RoleplayController@destroy');
 
-Route::get('/virtual-tour', function () {
-    return view('virtual-tour');
-});
 Route::get('/contact', 'ContactController@index');
 //Route::get('/contact/create', 'ContactController@create');
 //Route::post('/contact', 'ContactController@store');
