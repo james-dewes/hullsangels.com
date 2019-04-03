@@ -13,7 +13,7 @@
       </div>
     </div>
 </div>
-<div class="fixed-bottom right">
+<div class="small text-center text-grey copy-notice">
       <p>Hulls Angels &copy;<?php echo date("Y") ?></p>
 </div>
 </footer>
