@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-  <meta name="description" content="Visit Hulls Angels to join in games of Warhammer 40k, Bolt Action, Warmachine, Age of Sigmar, Necromunda, Blood Bowl, Dreadball, Kings of War Malifaux and more.">
-  <title>Hulls Angels | Wargaming and Roleplaying in Hull</title>
+  <meta name="description" content="Visit Hull's Angels to join in games of Warhammer 40k, Bolt Action, Warmachine, Age of Sigmar, Necromunda, Blood Bowl, Dreadball, Kings of War Malifaux and more.">
+  <title>Hull's Angels | Wargaming and Roleplaying in Hull</title>
 @endsection
 @section('title')
   <?php

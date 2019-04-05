@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('meta')
-  <title>Hulls Angels | {{$article->title}}</title>
+  <title>Hull's Angels | {{$article->title}}</title>
 @endsection
 @section('title')
   {{$article->title}}

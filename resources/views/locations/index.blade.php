@@ -1,7 +1,7 @@
 
 @extends('layouts.master')
 @section('meta')
-    <title>Find Hulls Angels</title>
+    <title>Find Hull's Angels</title>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_API')}}">
     </script>
@@ -31,11 +31,11 @@
     </script>
 @endsection
 @section('title')
-Find Hulls Angels Wargaming Club
+Find Hull's Angels Wargaming Club
 @endsection
 
 @section('content')
-  <p>Situated it Hulls old YPI building you can find Hulls Angels at:</p>
+  <p>Situated it Hull's old YPI building you can find Hull's Angels at:</p>
   <div class="address" itemscope itemtype="http://schema.org/ContactPoint">
     <div itemscope itemtype="schema.org/PostalAddress">
       <span itemprop="streetAddress">Unit 2<br>14-18<br>Grimston Street</span><br>

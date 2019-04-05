@@ -1,14 +1,14 @@
 
 @extends('layouts.master')
 @section('meta')
-<meta name="description" value="Hulls Angels Events Calender. Check the latest events, download rules packs, check timings and more.">
-<meta name="keywords" value="hulls angels, events, hull events, hull whats on">
+<meta name="description" value="Hull's Angels Events Calender. Check the latest events, download rules packs, check timings and more.">
+<meta name="keywords" value="hull's angels, events, hull events, hull whats on">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.css" media="print">
-<title>Hulls Angels Events</title>
+<title>Hull's Angels Events</title>
 @endsection
 @section('title')
-  Events at Hulls Angels
+  Events at Hull's Angels
 @endsection
 @section('content')
   <div class="container">

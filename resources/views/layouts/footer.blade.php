@@ -14,6 +14,6 @@
     </div>
 </div>
 <div class="small text-center text-grey copy-notice">
-      <p>Hulls Angels &copy;<?php echo date("Y") ?></p>
+      <p>Hull's Angels &copy;<?php echo date("Y") ?></p>
 </div>
 </footer>
