@@ -32,7 +32,8 @@ class EventsController extends Controller
         }
         $calendar_details = Calender::addEvents($event_list);
         $calendar_details->setOptions(
-          [ 'defaultView'=>'agendaWeek',
+          [
+            'height'=> 'parent',
             'businessHours'=> true, // TODO: make an object for this
             'nowIndicator'=> true, //TODO fix this
             'now' => (new \DateTime())->format('Y-m-d\TH:i:s'),
@@ -40,11 +41,13 @@ class EventsController extends Controller
             'eventTextColor' => '#ffffff',
             'displayEventEnd'=>true,
             'eventRender'=> 'function(event, element) {}',
+            'minTime'=>'08:00:00',
+            'mamTime'=>'23:00:00',
           ]
         )->setCallbacks([ 'eventRender'=> 'function(event, element) { element.children().last().append(
           \'<div class="eventDiscription col-md-4">\'+event.description+\'</span>\'
         );}']);
-        return view('events/index',compact('calendar_details'));
+        return view('events/index',compact('calendar_details'   ));
     }
 
     /**
