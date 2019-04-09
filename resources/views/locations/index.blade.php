@@ -8,7 +8,7 @@
     <script type="text/javascript">
     function initialize() {
         var myLatLng = {lat: 53.747277, lng: -0.336116};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
           center: myLatLng,
           zoom: 14
         });
