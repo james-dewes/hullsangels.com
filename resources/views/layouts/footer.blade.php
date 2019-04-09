@@ -1,6 +1,6 @@
 <footer>
   <div id="cookie_directive_container" class="container" style="display: none">
-    <div class="container fixed-bottom bg-secondary">
+    <div class="container fixed-bottom bg-dark">
       <div class="content-center" id="cookie_accept">
         <button type="button" class="close pull-right" aria-label="Close">
           <span aria-hidden="true">&times;</span>

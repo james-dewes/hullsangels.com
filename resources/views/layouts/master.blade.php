@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#660088">
+  <meta name="theme-color" content="#f1fc02">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="author" content="James Dewes">
   <link rel="icon" href="../../../../favicon.ico">
