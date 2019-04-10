@@ -35,7 +35,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'name'=> 'required|max:255',
+          'email'=> 'required|email|max:255',
+          'subject'=> 'required|string|in:("events","membership","general enquiries")',
+          'message'=> 'required|string',
+          'terms'=>'required|accepted'
+        ]);
+        return view('contact.index');
     }
 
     /**

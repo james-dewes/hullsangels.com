@@ -28,7 +28,7 @@
           </div>
         <div class="form-group">
           <label for="subject">Subject</label>
-          <select class="form-control" name="Subject" tabindex="3">
+          <select class="form-control" name="subject" tabindex="3">
             <option value="events">Events</option>
             <option value="membership">Membership</option>
             <option value="general">General Enquiries</option>
@@ -45,13 +45,23 @@
     <div class="row">
       <div class="col-md-12">
           <div class="form-group">
-            <input type="checkbox" value="" id="invalidCheck" required="required" tabindex="6">
-            <label for="invalidCheck">I agree for my details to be used in response to my query, <a href="terms" tabindex="8">full terms and conditions available</a>.</label>
+            <input type="checkbox" value="" id="terms" name="terms" required="required" tabindex="6">
+            <label for="terms">I agree for my details to be used in response to my query, <a href="terms" tabindex="8">full terms and conditions available</a>.</label>
           </div>
-
+          {{ csrf_field() }}
           <button type="submit" class="btn btn-secondary btn-lg" tabindex="7">Submit</button>
           </div>
     </div>
         </form>
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
   </div>
 @endsection

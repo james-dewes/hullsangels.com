@@ -71,7 +71,7 @@ Route::get('/roleplaying', 'RoleplayController@index');
 
 Route::get('/contact', 'ContactController@index');
 //Route::get('/contact/create', 'ContactController@create');
-//Route::post('/contact', 'ContactController@store');
+Route::post('/contact', 'ContactController@store');
 //Route::patch('/contact/{system}', 'ContactController@update');
 //Route::delete('/contact/{system}', 'ContactController@destroy');
 Route::get('/terms', function(){return view('terms');});
