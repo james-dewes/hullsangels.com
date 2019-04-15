@@ -29,9 +29,9 @@
         <div class="form-group">
           <label for="subject">Subject</label>
           <select class="form-control" name="subject" tabindex="3">
-            <option value="events">Events</option>
-            <option value="membership">Membership</option>
-            <option value="general">General Enquiries</option>
+            @foreach($subjects as $subject)
+              <option value="{{$subject}}" selected="selected">{{ucwords($subject)}}</option>
+            @endforeach
           </select>
         </div>
       </div>
@@ -45,7 +45,7 @@
     <div class="row">
       <div class="col-md-12">
           <div class="form-group">
-            <input type="checkbox" value="" id="terms" name="terms" required="required" tabindex="6">
+            <input type="checkbox" id="terms" name="terms" value="true" required="required" tabindex="6">
             <label for="terms">I agree for my details to be used in response to my query, <a href="terms" tabindex="8">full terms and conditions available</a>.</label>
           </div>
           {{ csrf_field() }}

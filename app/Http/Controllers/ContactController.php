@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\ContactOption;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        $subjects = ContactOption::pluck('subject');
+        return view('contact.index',compact('subjects'));
     }
 
     /**
@@ -38,11 +40,13 @@ class ContactController extends Controller
         $this->validate($request, [
           'name'=> 'required|max:255',
           'email'=> 'required|email|max:255',
-          'subject'=> 'required|string|in:("events","membership","general enquiries")',
+          'subject'=> 'required|string|exists:contact_options,subject',
           'message'=> 'required|string',
           'terms'=>'required|accepted'
         ]);
-        return view('contact.index');
+        $subjects = ContactOption::pluck('subject');
+        // TODO: send mail
+        return view('contact.index',compact('subjects'));
     }
 
     /**
