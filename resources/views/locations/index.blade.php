@@ -1,6 +1,13 @@
 
 @extends('layouts.master')
 @section('meta')
+  <style media="screen">
+  #map {
+  min-height: 500px;
+  width: 100%;
+  height:100%
+}
+  </style>
     <title>Find Hull's Angels</title>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_API')}}">
@@ -35,18 +42,32 @@ Find Hull's Angels Wargaming Club
 @endsection
 
 @section('content')
-  <p>Situated it Hull's old YPI building you can find Hull's Angels at:</p>
-  <div class="address" itemscope itemtype="http://schema.org/ContactPoint">
-    <div itemscope itemtype="schema.org/PostalAddress">
-      <span itemprop="streetAddress">Unit 2<br>14-18<br>Grimston Street</span><br>
-      <span itemprop="addressLocality">Kigston Upon Hull</span><br>
-      <span itemprop="addressLocality">East Yorkshire</span><br>
-      <span itemprop="addressCountry">United Kingdom</span><br>
-      <span itemprop="postalCode">HU1 3HG</span><br>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Situated it Hull's old YPI building you can find Hull's Angels at:</p>
+      <div class="address" itemscope itemtype="http://schema.org/ContactPoint">
+        <div itemscope itemtype="schema.org/PostalAddress">
+          <span itemprop="streetAddress">Unit 2<br>14-18<br>Grimston Street</span><br>
+          <span itemprop="addressLocality">Kigston Upon Hull</span><br>
+          <span itemprop="addressLocality">East Yorkshire</span><br>
+          <span itemprop="addressCountry">United Kingdom</span><br>
+          <span itemprop="postalCode">HU1 3HG</span><br>
+        </div>
+      </div>
     </div>
   </div>
-  <p>Access is via Charlotte Street Mews, just off Grimston Street, down the side of the Hull Business Training Centre.</p>
-  <div id="map-canvas">You should see the Google Map here. Please try refreshing your browser.</div>
-  <script async defer src="https://apis.google.com//js/platform.js?publisherid=101553455478763444800"></script>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Access is via Charlotte Street Mews, just off Grimston Street, down the side of the Hull Business Training Centre.</p>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="map-canvas" class="map">You should see the Google Map here. Please try refreshing your browser.</div>
+    </div>
+    <div class="col-md-6">
+      <div id="pano" class="map">You should see the Google Map here. Please try refreshing your browser.</div>
+    </div>
+  </div>
+  <script async defer src="https://apis.google.com//js/platform.js?publisherid=101553455478763444800"></script>
 @endsection
