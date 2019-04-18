@@ -14,6 +14,6 @@
  </div>
  <div class="row">
    <div class="col-md-8">
-       <p>{{$article->content}}</p>
+       <p>{!!$article->content!!}</p>
  </div>
 @endsection

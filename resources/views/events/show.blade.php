@@ -23,6 +23,6 @@
  </div>
  <div class="row">
    <div class="col-md-8">
-       <p itemprop="about">{{$event->description}}</p>
+       <p itemprop="about">{!!$event->description!!}</p>
  </div>
 @endsection
