@@ -24,7 +24,7 @@ Wargame Systems played at Hull's Angels Wargaming Club
               {{$system->name}}
               </a>
             </h2>
-            <p>{{$system->desciption}}</p>
+            <p>{{$system->getShortAttribute('description')}}</p>
         </article>
       </div>
     </div>

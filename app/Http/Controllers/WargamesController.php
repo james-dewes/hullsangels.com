@@ -48,7 +48,7 @@ class WargamesController extends Controller
      function show($slug){
        // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
        $system = Wargames::whereSlug($slug)->firstOrFail();
-       return view('wargames.show',compact('system','archive'));
+       return view('wargaming.show',compact('system','archive'));
      }
 
     /**

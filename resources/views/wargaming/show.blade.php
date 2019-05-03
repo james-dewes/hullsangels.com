@@ -9,7 +9,7 @@
 <div class="container">
  <div class="row">
    <div class="col-md-12">
-       <p>!!$system->description!!</p>
+       <p>{!!$system->description!!}</p>
    </div>
  </div>
 @endsection

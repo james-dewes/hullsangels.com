@@ -27,7 +27,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="/wargaming" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wargaming</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="wargaming">All</a>
+          <a class="dropdown-item" href="/wargaming">All</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -38,6 +38,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" target="new" href="https://shop.spreadshirt.co.uk/HullsAngels">Shop</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

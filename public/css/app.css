@@ -160,7 +160,7 @@ dl.faq dt:before{
       display: block;
       left: -20px;
       position: absolute;
-      box-shadow: black -0.1rem 0.2rem;
+      box-shadow: #00000099 -0.1rem 0.2rem;
 
   }
 }

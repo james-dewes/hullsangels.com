@@ -20,7 +20,7 @@ Auth::routes();
 
 
 Route::get('/news', 'NewsController@index');
-//Route::get('/news/create', 'NewsController@create');
+Route::get('/news/create', 'NewsController@create');
 Route::get('/news/{article}', 'NewsController@show');
 //Route::get('/news/{article}/edit', 'NewsController@edit');
 //Route::post('/news', 'NewsController@store');
@@ -56,7 +56,7 @@ Route::get('/opening-times', 'OpeningController@index');
 //Route::delete('/opening-times/{system}', 'OpeningController@destroy');
 
 Route::get('/wargaming', 'WargamesController@index');
-//Route::get('/wargaming/{system}', 'WargamesController@show');
+Route::get('/wargaming/{system}', 'WargamesController@show');
 //Route::get('/wargaming/create', 'WargamesController@create');
 //Route::post('/wargaming', 'WargamesController@store');
 //Route::patch('/wargaming/{system}', 'WargamesController@update');

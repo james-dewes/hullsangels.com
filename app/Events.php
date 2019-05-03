@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Events extends Model
+class Events extends Article
 {
  protected $fillable = ['name', 'description','user_id','start','end'];
   public function user()

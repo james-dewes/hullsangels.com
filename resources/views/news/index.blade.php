@@ -14,8 +14,9 @@
        <article>
          <h2 class="stencil">{{$article->title}}</h2>
          <p class='date'>{{$article->created_at->toFormattedDateString()}}</p>
-         <p>{!!$article->content!!}</p>
-         <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">View details »</a>
+         <p>{!!$article->getShortAttribute('content')!!}</p>
+         <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">Read more »</a>
+         <hr>
        </article>
      </div>
   </div>

@@ -16,6 +16,7 @@
         <div class="row">
           <div class="col-md-4">
             <h2>Latest News</h2>
+            <hr>
             <h3>{{$news->title}}</h3>
             <p>{{$news->created_at->toFormattedDateString()}}</p>
             <p>{!!$news->content!!}</p>

@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Wargames extends Model
+class Wargames extends Article
 {
-  //
+
 }

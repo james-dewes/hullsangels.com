@@ -12,13 +12,13 @@ class NewsController extends Controller
       return view('news.index',compact('articles'));
     }
     function show($slug){
-      // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
-      $archives = News::selectRaw('year(created_at) year, monthname(created_at), month, count(*) published')
-                          ->groupBY('year','month')
-                          ->get()
-                          ->toArray();
+      // $archives = News::selectRaw('year(created_at) year, monthname(created_at), month, count(*) published')
+      //                     ->groupBY('year','month')
+      //                     ->get()
+      //                     ->toArray();
       $article = News::whereSlug($slug)->firstOrFail();
-      return view('news.show',compact('article','archive'));
+      return view('news.show', compact('article'));
+
     }
 
     function create(){
