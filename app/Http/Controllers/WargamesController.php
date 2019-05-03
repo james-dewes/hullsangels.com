@@ -45,10 +45,11 @@ class WargamesController extends Controller
      * @param  \App\Wargames  $wargames
      * @return \Illuminate\Http\Response
      */
-    public function show(Wargames $wargames)
-    {
-        //
-    }
+     function show($slug){
+       // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
+       $system = Wargames::whereSlug($slug)->firstOrFail();
+       return view('wargames.show',compact('system','archive'));
+     }
 
     /**
      * Show the form for editing the specified resource.

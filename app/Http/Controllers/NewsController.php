@@ -13,12 +13,18 @@ class NewsController extends Controller
     }
     function show($slug){
       // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
+      $archives = News::selectRaw('year(created_at) year, monthname(created_at), month, count(*) published')
+                          ->groupBY('year','month')
+                          ->get()
+                          ->toArray();
       $article = News::whereSlug($slug)->firstOrFail();
-      return view('news.show',compact('article'));
+      return view('news.show',compact('article','archive'));
     }
+
     function create(){
       return view('news.create');
     }
+
     function store(Request $request){
       $this->validate($request, [
         'title'=> 'required',

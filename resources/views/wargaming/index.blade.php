@@ -19,7 +19,11 @@ Wargame Systems played at Hull's Angels Wargaming Club
     <div class="row">
       <div class="col-md-12">
         <article>
-            <h2>{{$system->name}}</h2>
+            <h2>
+              <a href="/wargaming/{{$system->slug}}">
+              {{$system->name}}
+              </a>
+            </h2>
             <p>{{$system->desciption}}</p>
         </article>
       </div>

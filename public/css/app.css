@@ -140,7 +140,7 @@ dl.faq dt:before{
   width: 1rem;
   text-align: center;
   line-height: 1rem;
-  border: 1px solid black;
+  border: 1px solid #00000099;
   display: block;
   left: 1rem;
   position: absolute;
