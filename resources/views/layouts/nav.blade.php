@@ -6,7 +6,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsHull'sAngels" aria-controls="navbarsHull'sAngels" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarsHull'sAngels">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -28,6 +27,9 @@
         <a class="nav-link dropdown-toggle" href="/wargaming" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wargaming</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="/wargaming">All</a>
+          @foreach ($nav['wargames'] as $wargame)
+            <a class="dropdown-item" href="/wargaming/{{$wargame->slug}}">{{$wargame->name}}</a>
+          @endforeach
         </div>
       </li>
       <li class="nav-item dropdown">

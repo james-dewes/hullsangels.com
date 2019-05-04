@@ -164,3 +164,9 @@ dl.faq dt:before{
 
   }
 }
+h2 a {
+  color:#444;
+}
+h2 a:hover {
+  color: black;
+}
