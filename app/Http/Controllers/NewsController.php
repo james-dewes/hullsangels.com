@@ -33,7 +33,7 @@ class NewsController extends Controller
       ]);
       $article = new News;
       $article->title = $request->title;
-      $article->content = $request->content;
+      $article->content = News::summernote_tidy($request->content);
       $article->user_id = $request->user_id;
       $article->slug = str_slug($request->title);
 
