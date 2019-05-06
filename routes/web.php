@@ -23,7 +23,7 @@ Route::get('/news', 'NewsController@index');
 Route::get('/news/create', 'NewsController@create');
 Route::get('/news/{article}', 'NewsController@show');
 //Route::get('/news/{article}/edit', 'NewsController@edit');
-//Route::post('/news', 'NewsController@store');
+Route::post('/news', 'NewsController@store');
 //Route::patch('/news/{article}', 'NewsController@update');
 //Route::delete('/news/{article}', 'NewsController@destroy');
 
