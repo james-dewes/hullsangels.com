@@ -19,14 +19,14 @@
             <hr>
             <h3>{{$news->title}}</h3>
             <p>{{$news->created_at->toFormattedDateString()}}</p>
-            <p>{!!$news->content!!}</p>
+            <p>{!!$news->getShortAttribute('content')!!}</p>
             <p><a class="btn btn-secondary" href="/news/{{$news->slug}}" role="button">View details &raquo;</a></p>
           </div>
           <div class="col-md-8">
             <div class="row">
               <div class="col-md-12">
                 <h2>Welcome to Hull's Angels</h2>
-                <p>Hull's Angels is one of the largest wargaming clubs in the north east with more than 200 members. Open two nights a week and on weekends Hull's Angels' permanent gaming space boasts more than 20 gaming tables as well as soft seating for role playing, tables for hobby activities, board games, card based games and a painting bar.</p>
+                <p>Hull's Angels is one of the largest wargaming clubs in the north east with more than 200 members. Open two nights a week and occasional weekends Hull's Angels' permanent gaming space boasts more than 20 gaming tables as well as soft seating for role playing, tables for hobby activities, board games, card based games and a painting bar.</p>
               </div>
               <div class="col-md-12">
                 <h2>Friendly space to game</h2>
