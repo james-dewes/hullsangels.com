@@ -105,8 +105,13 @@ class EventsController extends Controller
      */
     public function show($slug)
     {
-
       $event = Events::whereSlug($slug)->firstOrFail();
+      $event->startDate = date('d/m/Y', strtotime($event->start));
+      $event->startTime = date('H:i', strtotime($event->start));
+      $event->endDate = date('d/m/Y', strtotime($event->end));
+      $event->endTime = date('H:i', strtotime($event->end));
+      $event->utcStart = date('Y-m-dTH:i', strtotime($event->start));
+      $event->utcEnd = date('Y-m-dTH:i', strtotime($event->end));
       return view('events.show',compact('event'));
     }
     /**

@@ -14,16 +14,30 @@
 <div class="container" itemscope itemtype="https://schema.org/Event">
  <div class="row">
    <div class="col-md-12">
-       <p>
-         <span class='date' itemprop="startDate">{{$event->start}}</span>
-          To
-          <span class='date' itemprop="startTime">{{$event->end}}</span>
+      <meta itemprop="name" content="{{$event->name}}" />
+      <meta itemprop="startDate" content="{{$event->utcStart}}" />
+      <meta itemprop="endDate" content="{{$event->utcEnd}}" />
+      <div itemprop="location" itemscope>
+        <div itemprop="PostalAddress" itemscope itemtype="schema.org/PostalAddress">
+          <meta itemprop="streetAddress" value="Unit 2,14-18,Grimston,Street"/>
+          <meta itemprop="addressLocality" value="Kigston Upon Hull"/>
+          <meta itemprop="addressLocality" value="East Yorkshire"/>
+          <meta itemprop="addressCountry" value="United Kingdom"/>
+          <meta itemprop="postalCode" value="HU1 3HG"/>
+        </div>
+      </div>
+       <p class='date'>
+           {{$event->startDate}}
+           {{$event->startTime}}
+           To
+           {{$event->endDate}}
+           {{$event->endTime}}
        </p>
        <hr>
      </div>
  </div>
  <div class="row">
-   <div class="col-md-12">
-       <p itemprop="about">{!!$event->description!!}</p>
+   <div class="col-md-12" itemprop="description">
+       <p>{!!$event->description!!}</p>
  </div>
 @endsection
