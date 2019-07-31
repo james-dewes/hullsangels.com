@@ -1,5 +1,11 @@
 @extends('layouts.master')
 @section('meta')
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@HullsAngelsClub" />
+  <meta name="twitter:title" content="{{$article->title}}" />
+  <meta name="twitter:description" content='{{$article->getShortAttribute('content')}}' />
+  <meta name="twitter:image" content='https://hullsangels.com/img/logo.png' />
+
   <title>Hull's Angels | {{$article->title}}</title>
 @endsection
 @section('title')
