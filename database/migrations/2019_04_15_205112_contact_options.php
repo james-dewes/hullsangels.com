@@ -16,6 +16,7 @@ class ContactOptions extends Migration
       Schema::create('contact_options', function (Blueprint $table) {
           $table->increments('id');
           $table->string('subject')->unique;
+          $table->timestamps();
       });
     }
 
