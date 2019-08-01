@@ -6,6 +6,14 @@
   <meta name="twitter:description" content='{{$article->getShortAttribute('content')}}' />
   <meta name="twitter:image" content='https://hullsangels.com/img/logo.png' />
 
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{$article->title}}"/>
+  <meta property="article:published_time" content="{{$article->toFormattedDateString()}}"/>
+    <meta property="og:image" content="https://hullsangels.com/img/logo.png"/>
+  <meta property="og:description" content="{{$article->getShortAttribute('content')}}"/>
+  <meta property="og:url" content="{{URL::current()}}" />
+
+
   <title>Hull's Angels | {{$article->title}}</title>
 @endsection
 @section('title')

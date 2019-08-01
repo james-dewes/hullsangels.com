@@ -16,7 +16,7 @@ class EventsController extends Controller
     public function index()
     {
         $events = Events::all();
-        $events_list = [];
+        $event_list = [];
         foreach ($events as $key => $event) {
           $event_list[] = Calender::event(
             $event->name,

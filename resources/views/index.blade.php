@@ -20,10 +20,12 @@ Hull's Angels Wargaming Club
           <div class="col-md-4">
             <h2>Latest News</h2>
             <hr>
+            @if($news != null)
             <h3>{{$news->title}}</h3>
             <p>{{$news->created_at->toFormattedDateString()}}</p>
             <p>{!!$news->getShortAttribute('content')!!}</p>
             <p><a class="btn btn-secondary" href="/news/{{$news->slug}}" role="button">View details &raquo;</a></p>
+            @endif
           </div>
           <div class="col-md-8">
             <div class="row">

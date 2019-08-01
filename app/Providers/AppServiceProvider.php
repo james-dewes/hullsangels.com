@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Wargames;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,12 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //all wargames
-        $wargames = Wargames::all();
-        $nav = [
-            'wargames'=>$wargames
-          ];
-         view()->share('nav', $nav);
+        view()->composer('layouts.nav',function($view){
+            $view->with('nav', ['wargames'=>\App\Wargames::all()]);
+        });
     }
 
     /**
