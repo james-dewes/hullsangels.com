@@ -14,6 +14,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
        $this->composeNavigation();
+       $this->composeNewsArchive();
     }
 
     /**
@@ -27,7 +28,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Composer the Navigation view
+     * Compose the Navigation view
      * 
      * @return void
      */
@@ -35,6 +36,20 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         view()->composer('layouts.nav',function($view){
             $view->with('nav', ['wargames'=>\App\Wargames::all()]);
+        });
+    }
+     /**
+     * Compose the News arcive
+     * 
+     * @return void
+     */
+    private function composeNewsArchive()
+    {
+        view()->composer('news.*',function($view){
+            $view->with('archives', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
+                 ->groupby('year','month')
+                 ->orderByRaw('min(created_at) desc')
+                 ->get());
         });
     }
 }
