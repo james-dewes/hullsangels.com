@@ -9,7 +9,7 @@
 @endsection
 @section('content')
 <div class="row">
-     <div class="col-md-8">
+     <div class="col-md-10">
       @foreach ($articles as $article)
         <div class="row">
           <div class="col-md-12">
@@ -24,15 +24,6 @@
         </div>
         @endforeach
         </div>
-        <aside class="col-md-4">
-            <h2>Archive</h2>
-            <ol class="list-unstyled mb-0">
-              @foreach($archives as $status)
-              <li>
-                <a href="">{{$status->month}} {{$status->year}} ({{$status->published}})</a>
-              </li>
-              @endforeach
-            </ol>
-        </aside>
+        @include('layouts.sidebar')
       </div>
     @endsection

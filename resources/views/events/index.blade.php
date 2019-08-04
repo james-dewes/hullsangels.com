@@ -12,11 +12,15 @@
 @endsection
 @section('content')
   <div class="container">
-    <div class="pannel pannel-primary">
-
-      <div class="pannel-body">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="pannel pannel-primary">
+        <div class="pannel-body">
+        </div>
+        {!! $calendar_details->calendar() !!}
+        </div>
       </div>
-      {!! $calendar_details->calendar() !!}
+      @include('layouts.sidebar')
     </div>
   </div>
 @endsection
