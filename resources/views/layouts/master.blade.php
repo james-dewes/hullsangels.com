@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="James Dewes">
+  <!--prefetch the external domains -->
+  <link rel='dns-prefetch' href='maxcdn.bootstrapcdn.com'>
+  <link rel='dns-prefetch' href='code.jquery.com'>
+  <link rel='dns-prefetch' href='fonts.gstatic.com'>
+  <link rel='dns-prefetch' href='fonts.googleapis.com'>
+  <link rel='dns-prefetch' href='cdnjs.cloudflare.com'>
+  <!--set up the mobile view-->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

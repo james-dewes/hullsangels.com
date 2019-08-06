@@ -1,6 +1,13 @@
 
 @extends('layouts.master')
 @section('meta')
+  <link rel='dns-prefetch' href='maps.gstatic.com'>
+  <link rel='dns-prefetch' href='maps.googleapis.com'>
+  <link rel='dns-prefetch' href='geo0.ggpht.com'>
+  <link rel='dns-prefetch' href='geo1.ggpht.com'>
+  <link rel='dns-prefetch' href='geo2.ggpht.com'>
+  <link rel='dns-prefetch' href='geo3.ggpht.com'>
+  <link rel='dns-prefetch' href='cbks0.googleapis.com'>
   <style media="screen">
   #map {
   min-height: 500px;
