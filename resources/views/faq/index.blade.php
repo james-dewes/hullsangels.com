@@ -4,8 +4,9 @@
     <meta name="keywords" value="hull's angels faq, wargames faq, hull's angels club faq, wargaming club faq">
     <title>Hull's Angels FAQs</title>
     <script>
-      function fold(element){
-        $(element).next('dd').toggle();
+      function faqFold(element){
+          $(element).next('dd').toggle();
+         element.classList.toggle('active');
       }
     </script>
 @endsection
@@ -17,7 +18,7 @@
    <div class="col-md-8">
      <dl class="faq">
        @foreach ($faqs as $faq)
-       <dt onclick="fold(this)">{{$faq->question}}</dt>
+       <dt onclick="faqFold(this)">{{$faq->question}}</dt>
        <dd class="hidden">{!!$faq->answer!!}</dd>
 
         @endforeach

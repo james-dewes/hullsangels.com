@@ -150,12 +150,14 @@ dl.faq dt:before{
   position: absolute;
   box-shadow: black -0.1rem 0.2rem;
 }
+dl.faq dt.active:before {
+  content: "-";
+}
 @media only screen and (min-width: 500px) {
   dl.faq dt:before{
     margin-left: inherit;
   }
   dl.faq dt:before {
-      content: "+";
       height: 1.5rem;
       width: 1.5rem;
       text-align: center;
@@ -163,8 +165,6 @@ dl.faq dt:before{
       border: 1px solid black;
       display: block;
       left: -20px;
-      position: absolute;
-      box-shadow: #00000099 -0.1rem 0.2rem;
 
   }
 }
