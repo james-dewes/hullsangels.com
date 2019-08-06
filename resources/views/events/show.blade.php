@@ -3,8 +3,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@hullsangels_wargaming">
 <meta name="twitter:creator" content="@hullsangels_wargaming">
-<meta name="twitter:text:title" content="{{$event->title}}">
-<meta name="twitter:description" content="{{$event->title}} from {{$event->start}}">
+<meta name="twitter:title" content="{{$event->name}}">
+<meta name="twitter:description" content="{{$event->getShortAttribute('description')}} from {{$event->start}}">
 <meta name="twitter:image" content="https://hullsangels.com/img/logo.png">
 @endsection
 @section('title')
@@ -21,6 +21,7 @@
         <div itemprop="PostalAddress" itemscope itemtype="schema.org/PostalAddress">
           <meta itemprop="streetAddress" value="Unit 2,14-18,Grimston,Street"/>
           <meta itemprop="addressLocality" value="Kigston Upon Hull"/>
+          
           <meta itemprop="addressLocality" value="East Yorkshire"/>
           <meta itemprop="addressCountry" value="United Kingdom"/>
           <meta itemprop="postalCode" value="HU1 3HG"/>
