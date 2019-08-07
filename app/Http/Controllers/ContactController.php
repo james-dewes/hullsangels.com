@@ -6,6 +6,7 @@ use App\Contact;
 use App\ContactOption;
 use Illuminate\Http\Request;
 
+
 class ContactController extends Controller
 {
     /**
@@ -46,6 +47,7 @@ class ContactController extends Controller
         ]);
         $subjects = ContactOption::pluck('subject');
         // TODO: send mail
+
         return view('contact.index',compact('subjects'));
     }
 
