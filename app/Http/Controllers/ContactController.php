@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\ContactOption;
 use Illuminate\Http\Request;
-
+use App\Mailers\ContactMailer;
 
 class ContactController extends Controller
 {
+    protected $mailer;
+
+    public function __construct(ContactMailer $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +24,7 @@ class ContactController extends Controller
     public function index()
     {
         $subjects = ContactOption::pluck('subject');
-        return view('contact.index',compact('subjects'));
+        return view('contact.index', compact('subjects'));
     }
 
     /**
@@ -39,16 +46,17 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'name'=> 'required|max:255',
-          'email'=> 'required|email|max:255',
-          'subject'=> 'required|string|exists:contact_options,subject',
-          'message'=> 'required|string',
-          'terms'=>'required|accepted'
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'subject' => 'required|string|exists:contact_options,subject',
+            'message' => 'required|string',
+            'terms' => 'required|accepted'
         ]);
         $subjects = ContactOption::pluck('subject');
         // TODO: send mail
+        $this->mailer->acknowledge($request);
 
-        return view('contact.index',compact('subjects'));
+        return view('contact.index', compact('subjects'));
     }
 
     /**
