@@ -55,6 +55,7 @@ class ContactController extends Controller
         $subjects = ContactOption::pluck('subject');
         // TODO: send mail
         $this->mailer->acknowledge($request);
+        $this->mailer->notifyCommittee($request);
 
         return view('contact.index', compact('subjects'));
     }
