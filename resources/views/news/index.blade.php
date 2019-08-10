@@ -3,6 +3,9 @@
     <meta name="description" content="News from Hull's Angels, news and updates from the Hull's Angels Wargaming club.">
     <meta name="keywords" content="hull's angels, news, updates">
     <title>Hull's Angels Opening News</title>
+    <meta property='og:type' content='article' />
+    <meta property='article:publisher' content='https://www.facebook.com/groups/216540088448058/' />
+    <meta property='og:site_name' content="Hull's Angels" />
 @endsection
 @section('title')
   News and Updates
