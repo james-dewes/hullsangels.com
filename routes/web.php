@@ -75,3 +75,5 @@ Route::post('/contact', 'ContactController@store');
 //Route::patch('/contact/{system}', 'ContactController@update');
 //Route::delete('/contact/{system}', 'ContactController@destroy');
 Route::get('/terms', function(){return view('terms');});
+
+Route::get('/search/{searchTerm}','SearchController@index');
