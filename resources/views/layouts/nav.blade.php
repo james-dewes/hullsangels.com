@@ -45,9 +45,9 @@
         <a class="nav-link" target="new" href="https://shop.spreadshirt.co.uk/HullsAngels">Shop</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn my-2 my-sm-0 grey" type="submit" disabled>Search</button>
+    <form class="form-inline my-2 my-lg-0" action="/search/" method="GET">
+      <input class="form-control mr-sm-2" type="text" id="searchTerm" placeholder="Search" aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
