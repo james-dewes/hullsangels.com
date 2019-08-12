@@ -76,4 +76,7 @@ Route::post('/contact', 'ContactController@store');
 //Route::delete('/contact/{system}', 'ContactController@destroy');
 Route::get('/terms', function(){return view('terms');});
 
-Route::get('/search/{searchTerm}','SearchController@index');
+Route::get('/search/','SearchController@index');
+Route::get('/search/{searchTerm?}','SearchController@show');
+Route::post('/search/','SearchController@redirect');
+
