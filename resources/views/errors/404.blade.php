@@ -25,10 +25,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button class="btn my-2 my-sm-0" type="submit">Search</button>
-            </form>
+          <form class="form-inline my-2 my-lg-0" action="/search/" method="POST">
+            <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+            @csrf
+            <button class="btn my-2 my-sm-0" type="submit">Search</button>
+          </form>
             <p>01000110 01101100 01100101 01110011
                01101000 00100000 01101001 01110011
                00100000 01100110 01100001 01101100
