@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Search;
 
 class SearchController extends Controller
 {
     public function index($searchTerm)
     {
-        $results = [];
-        return view('search.index',compact('searchTerm','results'));
+
+        $results = Search::search($searchTerm);
+        return view('search.index', compact('searchTerm', 'results'));
     }
 }

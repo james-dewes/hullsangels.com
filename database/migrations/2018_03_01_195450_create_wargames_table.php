@@ -15,9 +15,9 @@ class CreateWargamesTable extends Migration
     {
         Schema::create('wargames', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug',200)->unique();
+            $table->string('slug', 200)->unique();
             $table->timestamps();
-            $table->char('name', 100);
+            $table->string('name', 100);
             $table->longText('description');
         });
     }
