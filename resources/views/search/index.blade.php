@@ -5,6 +5,8 @@
 @section('content')
     @if(count($results)>0)
       @foreach($results as $result)
+        <p><a href="/{{strtolower(class_basename($result))}}/{{$result->slug}}">{{$result->title}}{{$result->name}}</a></p>
+        <p>{{$result->getShortAttribute('content')}}{{$result->getShortAttribute('description')}}</p>
       @endforeach
     @else
       <p>Try again?</p>
