@@ -24,7 +24,7 @@ class RoleplayController extends Controller
      */
     public function create()
     {
-        //
+        return view('roleplay.create');
     }
 
     /**

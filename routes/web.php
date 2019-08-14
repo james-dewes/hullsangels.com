@@ -20,18 +20,18 @@ Auth::routes();
 
 
 Route::get('/news', 'NewsController@index');
-//Route::get('/news/create', 'NewsController@create');
+Route::get('/news/create', 'NewsController@create');
 Route::get('/news/{article}', 'NewsController@show');
 //Route::get('/news/{article}/edit', 'NewsController@edit');
-//Route::post('/news', 'NewsController@store');
+Route::post('/news', 'NewsController@store');
 //Route::patch('/news/{article}', 'NewsController@update');
 //Route::delete('/news/{article}', 'NewsController@destroy');
 
 Route::get('/events', 'EventsController@index');
-// Route::get('/events/create', 'EventsController@create');
+Route::get('/events/create', 'EventsController@create');
 Route::get('/events/{event}','EventsController@show');
 //Route::get('/events/{event}/edit','EventsController@edit');
-// Route::post('/events', 'EventsController@store');
+Route::post('/events', 'EventsController@store');
 //Route::patch('/events/{event}', 'EventsController@update');
 //Route::delete('/events/{event}', 'EventsController@destroy');
 
@@ -43,9 +43,9 @@ Route::get('/find', 'LocationsController@index');
 //Route::delete('/find/{location}', 'LocationsController@destroy');
 
 Route::get('/faq', 'FaqController@index');
-//Route::get('/faq/create', 'FaqController@create');
+Route::get('/faq/create', 'FaqController@create');
 //NOT IMPLIMENTED Route::get('/faq/create', 'FaqController@show');
-//Route::post('/faq', 'FaqController@store');
+Route::post('/faq', 'FaqController@store');
 //Route::patch('/faq/{faq}', 'FaqController@update');
 //Route::delete('/faq/{faq}', 'FaqController@destroy');
 
@@ -57,20 +57,20 @@ Route::get('/opening-times', 'OpeningController@index');
 
 Route::get('/wargaming', 'WargamesController@index');
 Route::get('/wargaming/{system}', 'WargamesController@show');
-//Route::get('/wargaming/create', 'WargamesController@create');
-//Route::post('/wargaming', 'WargamesController@store');
+Route::get('/wargaming/create', 'WargamesController@create');
+Route::post('/wargaming', 'WargamesController@store');
 //Route::patch('/wargaming/{system}', 'WargamesController@update');
 //Route::delete('/wargaming/{system}', 'WargamesController@destroy');
 
 Route::get('/roleplaying', 'RoleplayController@index');
-//Route::get('/roleplaying/{system}', 'RoleplayController@show');
-//Route::get('/roleplaying/create', 'RoleplayController@create');
-//Route::post('/roleplaying', 'RoleplayController@store');
+Route::get('/roleplaying/{system}', 'RoleplayController@show');
+Route::get('/roleplaying/create', 'RoleplayController@create');
+Route::post('/roleplaying', 'RoleplayController@store');
 //Route::patch('/roleplaying/{system}', 'RoleplayController@update');
 //Route::delete('/roleplaying/{system}', 'RoleplayController@destroy');
 
 Route::get('/contact', 'ContactController@index');
-//Route::get('/contact/create', 'ContactController@create');
+Route::get('/contact/create', 'ContactController@create');
 Route::post('/contact', 'ContactController@store');
 //Route::patch('/contact/{system}', 'ContactController@update');
 //Route::delete('/contact/{system}', 'ContactController@destroy');
