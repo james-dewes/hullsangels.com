@@ -35,6 +35,10 @@
 </head>
 <body>
     @include('layouts.nav')
+    @guest
+    @else
+      @include('admin.layouts.partials.nav')
+    @endguest
     <main class="container">
       @if (!Request::is('/'))
         <h1>

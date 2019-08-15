@@ -11,13 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
-// Route::get('/bunker', 'HomeController@index')->name('home');
-Auth::routes();
-
-//Route::get('/register', 'RegistrationController@create');
-//Route::get('/login', 'SessionsController@create');
-
+Route::get('/', 'IndexController@index')->name('home');
 
 Route::get('/news', 'NewsController@index');
 Route::get('/news/create', 'NewsController@create');
@@ -29,7 +23,7 @@ Route::post('/news', 'NewsController@store');
 
 Route::get('/events', 'EventsController@index');
 Route::get('/events/create', 'EventsController@create');
-Route::get('/events/{event}','EventsController@show');
+Route::get('/events/{event}', 'EventsController@show');
 //Route::get('/events/{event}/edit','EventsController@edit');
 Route::post('/events', 'EventsController@store');
 //Route::patch('/events/{event}', 'EventsController@update');
@@ -74,9 +68,10 @@ Route::get('/contact/create', 'ContactController@create');
 Route::post('/contact', 'ContactController@store');
 //Route::patch('/contact/{system}', 'ContactController@update');
 //Route::delete('/contact/{system}', 'ContactController@destroy');
-Route::get('/terms', function(){return view('terms');});
+Route::get('/terms', function () {return view('terms');});
 
-Route::get('/search/','SearchController@index');
-Route::get('/search/{searchTerm?}','SearchController@show');
-Route::post('/search/','SearchController@redirect');
+Route::get('/search/', 'SearchController@index');
+Route::get('/search/{searchTerm?}', 'SearchController@show');
+Route::post('/search/', 'SearchController@redirect');
 
+Auth::routes();
