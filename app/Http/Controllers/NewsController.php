@@ -50,4 +50,12 @@ class NewsController extends Controller
       $article->save();
       return redirect("/news/{$article->slug}");
     }
+    function edit(News $news)
+    {
+
+    }
+    function destroy(News $news)
+    {
+      
+    }
 }

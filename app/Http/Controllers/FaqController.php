@@ -75,6 +75,6 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
+        return Faq::destroy($faq);
     }
 }
