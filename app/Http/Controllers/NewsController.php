@@ -12,10 +12,6 @@ class NewsController extends Controller
       return view('news.index',compact('articles'));
     }
     function show($slug){
-      // $archives = News::selectRaw('year(created_at) year, monthname(created_at), month, count(*) published')
-      //                     ->groupBY('year','month')
-      //                     ->get()
-      //                     ->toArray();
       $article = News::whereSlug($slug)->firstOrFail();
       return view('news.show', compact('article'));
 
@@ -41,7 +37,6 @@ class NewsController extends Controller
       $latestSlug = News::whereRaw("slug RLIKE '^{$article->slug}(-[0-9]*)?$'")
         ->latest('id')
         ->value('slug');
-        //dd($latestSlug);
       if($latestSlug){
         $pieces = explode('-',$latestSlug);
         $number = intval(end($pieces));
@@ -50,12 +45,15 @@ class NewsController extends Controller
       $article->save();
       return redirect("/news/{$article->slug}");
     }
-    function edit(News $news)
+    function edit($slug)
     {
-
+      $article = News::whereSlug($slug)->firstOrFail();
+      return view('news.edit',compact('article'));
     }
-    function destroy(News $news)
+    function destroy($slug)
     {
-      
+      $article = News::whereSlug($slug)->firstOrFail();
+      News::destroy($article->id);
+      return redirect("/news");
     }
 }
