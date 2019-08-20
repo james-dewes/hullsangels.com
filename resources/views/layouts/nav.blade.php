@@ -45,6 +45,10 @@
         <a class="nav-link" target="new" href="https://shop.spreadshirt.co.uk/HullsAngels">Shop</a>
       </li>
     </ul>
+    @guest
+    @else
+      @include('admin.layouts.partials.nav')
+    @endguest
     <form class="form-inline my-2 my-lg-0" action="/search/" method="POST">
       <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
       {{ csrf_field() }}

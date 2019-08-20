@@ -90,8 +90,8 @@ body {
   font-size: 1.5em;
 }
 
-h2 {jalla+One
-  font-weight: bold;jalla+One
+h2 {
+  font-weight: bold;
 }
 nav{
   font-size: 1rem;
@@ -108,11 +108,6 @@ nav.fixed-top a{
 
 btn-primary {
   background-color: #660088;
-}
-
-nav.admin {
-  background-color: #f4c242;
-  color: white;
 }
 h1{
   font-family: 'Play', sans-serif;

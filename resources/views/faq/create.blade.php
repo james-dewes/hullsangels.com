@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.master')
 @section('title')
   Enter a new FAQ
 @endsection

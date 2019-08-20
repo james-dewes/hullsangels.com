@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.master')
 @section('title')
   Create a news article
 @endsection
@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
       <label for="title">Headline</label>
-      <input type="text" class="form-control" id="title" placeholder="Title" name="title" required>
+      <input type="text" class="form-control" id="title" placeholder="Headline" name="title" required>
     </div>
     <div class="form-group">
       <label for="content">Content</label>
