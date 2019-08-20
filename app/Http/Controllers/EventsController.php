@@ -145,6 +145,6 @@ class EventsController extends Controller
      */
     public function destroy(Events $events)
     {
-        //
+      Events::destroy($events->id);
     }
 }
