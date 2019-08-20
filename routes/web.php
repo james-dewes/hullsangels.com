@@ -25,7 +25,7 @@ Route::get('/events', 'EventsController@index');
 Route::get('/events/create', 'EventsController@create')->middleware('auth');
 Route::get('/events/{event}', 'EventsController@show');
 Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('auth');
-Route::post('/events', 'EventsController@store');
+Route::post('/events', 'EventsController@store')->middleware('auth');
 Route::patch('/events/{event}', 'EventsController@update')->middleware('auth');
 Route::delete('/events/{event}', 'EventsController@destroy')->middleware('auth');
 

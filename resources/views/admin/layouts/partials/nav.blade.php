@@ -14,7 +14,7 @@ Create new:
         <a class="nav-link" href="/wargaming/create">Wargames</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/roleplay/create">Roleplay</a>
+        <a class="nav-link" href="/roleplaying/create">Roleplay</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/faq/create">FAQ's</a>
