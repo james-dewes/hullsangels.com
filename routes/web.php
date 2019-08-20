@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'IndexController@index')->name('home');
-
 Route::get('/news', 'NewsController@index');
 Route::get('/news/create', 'NewsController@create')->middleware('auth');
 Route::get('/news/{article}', 'NewsController@show');
@@ -50,15 +49,15 @@ Route::patch('/opening-times/{system}', 'OpeningController@update')->middleware(
 Route::delete('/opening-times/{system}', 'OpeningController@destroy')->middleware('auth');
 
 Route::get('/wargaming', 'WargamesController@index');
-Route::get('/wargaming/{system}', 'WargamesController@show');
 Route::get('/wargaming/create', 'WargamesController@create')->middleware('auth');
+Route::get('/wargaming/{system}', 'WargamesController@show');
 Route::post('/wargaming', 'WargamesController@store')->middleware('auth');
 Route::patch('/wargaming/{system}', 'WargamesController@update')->middleware('auth');
 Route::delete('/wargaming/{system}', 'WargamesController@destroy')->middleware('auth');
 
 Route::get('/roleplaying', 'RoleplayController@index');
-Route::get('/roleplaying/{system}', 'RoleplayController@show');
 Route::get('/roleplaying/create', 'RoleplayController@create')->middleware('auth');
+Route::get('/roleplaying/{system}', 'RoleplayController@show');
 Route::post('/roleplaying', 'RoleplayController@store')->middleware('auth');
 Route::patch('/roleplaying/{system}', 'RoleplayController@update')->middleware('auth');
 Route::delete('/roleplaying/{system}', 'RoleplayController@destroy')->middleware('auth');

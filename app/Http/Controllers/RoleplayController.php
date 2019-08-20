@@ -59,7 +59,7 @@ class RoleplayController extends Controller
     public function edit($slug)
     {
         $system = Roleplay::whereSlug($slug)->firstOrFail();
-        return view('roleplay.edit',compact($system));
+        return view('roleplay.edit',compact('system'));
     }
 
     /**

@@ -1,23 +1,14 @@
 <hr>
-Create new:
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/news/create">News</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create new</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <a class="dropdown-item" href="/news/create">News</a>
+          <a class="dropdown-item" href="/events/create">Events</a>
+          <a class="dropdown-item" href="/opening-times/create">Opening Times</a>
+          <a class="dropdown-item" href="/wargaming/create">Wargames</a>
+          <a class="dropdown-item" href="/roleplaying/create">Roleplay</a>
+          <a class="dropdown-item" href="/faq/create">FAQ's</a>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/events/create">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/opening-times/create">Opening Times</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/wargaming/create">Wargames</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/roleplaying/create">Roleplay</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/faq/create">FAQ's</a>
-      </li>
-      <li>
     </ul>
