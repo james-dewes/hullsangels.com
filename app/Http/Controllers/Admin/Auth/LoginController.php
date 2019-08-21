@@ -36,7 +36,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('admin.auth.login');
+        return view('admin.layouts.login');
     }
 
     /**
@@ -51,7 +51,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.layouts.login');
     }
 
     /**

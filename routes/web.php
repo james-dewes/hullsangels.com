@@ -74,3 +74,8 @@ Route::get('/search/{searchTerm?}', 'SearchController@show');
 Route::post('/search/', 'SearchController@redirect');
 
 Auth::routes();
+Route::get('bunker', 'Admin\Auth\LoginController@showLoginForm');
+Route::post('bunker/login', 'Admin\Auth\LoginController@login')->name('admin/login');
+Route::post('bunker/logout', 'Admin\Auth\LoginController@logout')->name('admin/logout');
+Route::get('bunker/register', 'Admin\Auth\RegisterController@showRegistrationForm')->name('admin/register');
+Route::post('bunker/register', 'Admin\Auth\RegisterController@register');
