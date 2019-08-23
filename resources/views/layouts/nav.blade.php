@@ -45,40 +45,15 @@
         <a class="nav-link" target="new" href="https://shop.spreadshirt.co.uk/HullsAngels">Shop</a>
       </li>
     </ul>
-    @guest
-    @else
+    @auth('admin')
       @include('admin.layouts.partials.nav')
-    @endguest
+    @endauth
     <form class="form-inline my-2 my-lg-0" action="/search/" method="POST">
       <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
       {{ csrf_field() }}
       <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="align-right navbar-nav">
-      @guest
-        <li class="nav-item" ><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-      @else
-          <li class="nav-item dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                  {{ Auth::user()->name }} <span class="caret"></span>
-              </a>
-
-              <ul class="dropdown-menu">
-                  <li>
-                      <a href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                          Logout
-                      </a>
-
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                          {{ csrf_field() }}
-                      </form>
-                  </li>
-              </ul>
-          </li>
-      @endguest
     </ul>
   </div>
 </nav>

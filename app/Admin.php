@@ -1,10 +1,12 @@
 <?php namespace App;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\User;
 
-class Admin extends Authenticatable
+class Admin extends User
 {
     use Notifiable;
+
+    public const isAdmin = 1;
 
     /**
      * The attributes that are mass assignable.
