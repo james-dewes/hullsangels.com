@@ -50,8 +50,7 @@ class LoginController extends Controller
         $this->guard()->logout();
 
         $request->session()->invalidate();
-
-        return redirect()->route('admin.layouts.login');
+        return redirect('/');
     }
 
     /**

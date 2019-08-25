@@ -53,7 +53,19 @@
       {{ csrf_field() }}
       <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <ul class="align-right navbar-nav">
-    </ul>
+    @auth('admin')
+      <ul class="align-right navbar-nav">
+        <li class="nav-link">
+          <a class="nav-link" href="{{ route('admin/logout') }}"
+              onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+              Logout
+          </a>
+          <form id="logout-form" action="{{ route('admin/logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+        </li>
+      </ul>
+    @endauth
   </div>
 </nav>
