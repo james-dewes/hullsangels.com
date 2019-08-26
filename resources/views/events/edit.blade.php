@@ -4,7 +4,7 @@
 @endsection
 @section('content')
   <!-- include summernote css-->
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
     <div class="row">
       <div class="col-md-8">
       <form method="POST" action="/events">
