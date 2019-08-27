@@ -45,10 +45,27 @@
         <a class="nav-link" target="new" href="https://shop.spreadshirt.co.uk/HullsAngels">Shop</a>
       </li>
     </ul>
+    @auth('admin')
+      @include('admin.layouts.partials.nav')
+    @endauth
     <form class="form-inline my-2 my-lg-0" action="/search/" method="POST">
       <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
       {{ csrf_field() }}
       <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form>
+    @auth('admin')
+      <ul class="align-right navbar-nav">
+        <li class="nav-link">
+          <a class="nav-link" href="{{ route('admin/logout') }}"
+              onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+              Logout
+          </a>
+          <form id="logout-form" action="{{ route('admin/logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+        </li>
+      </ul>
+    @endauth
   </div>
 </nav>

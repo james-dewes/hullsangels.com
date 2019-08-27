@@ -7,7 +7,7 @@
   <a href="/{{strtolower(class_basename($result))}}/{{$result->slug}}">
     <h2>{{$result->title}}{{$result->name}}</h2>
   </a>
-    <p>{{$result->getShortAttribute('content')}}{{$result->getShortAttribute('description')}}</p>
+  <p>{{$result->getShortAttribute('content')}}{{$result->getShortAttribute('description')}}</p>
 @endforeach
 <form action="/search/" method="POST">
 <input class="form-control mr-sm-2" type="text" id="searchTerm" name="q" placeholder="Search" aria-label="Search">

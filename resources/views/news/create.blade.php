@@ -1,10 +1,10 @@
-@extends('layouts.admin.master')
+@extends('layouts.master')
 @section('title')
   Create a news article
 @endsection
 @section('content')
 <!-- include summernote css-->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-12">
     <form method="POST" action="/news">
@@ -14,14 +14,13 @@
     </div>
     <div class="form-group">
       <label for="title">Headline</label>
-      <input type="text" class="form-control" id="title" placeholder="Title" name="title" required>
+      <input type="text" class="form-control" id="title" placeholder="Headline" name="title" required>
     </div>
     <div class="form-group">
       <label for="content">Content</label>
       <textarea name="content" id="content" class="form-control summernote" rows="8" cols="80" required></textarea>
     </div>
     <input type="hidden" name="user_id" value="1">
-
     @include('layouts.errors')
     </form>
   </div>

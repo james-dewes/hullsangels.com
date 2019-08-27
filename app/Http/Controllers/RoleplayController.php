@@ -24,7 +24,7 @@ class RoleplayController extends Controller
      */
     public function create()
     {
-        //
+        return view('roleplay.create');
     }
 
     /**
@@ -41,23 +41,25 @@ class RoleplayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Roleplay  $roleplay
+     * @param  String $slug
      * @return \Illuminate\Http\Response
      */
-    public function show(Roleplay $roleplay)
+    public function show($slug)
     {
-        //
+        $system = Roleplay::whereSlug($slug)->firstOrFail();
+        return view('roleplay.show',compact($system));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Roleplay  $roleplay
+     * @param  String $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit(Roleplay $roleplay)
+    public function edit($slug)
     {
-        //
+        $system = Roleplay::whereSlug($slug)->firstOrFail();
+        return view('roleplay.edit',compact('system'));
     }
 
     /**
@@ -78,8 +80,9 @@ class RoleplayController extends Controller
      * @param  \App\Roleplay  $roleplay
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Roleplay $roleplay)
+    public function destroy($slug)
     {
-        //
+        $system = Roleplay::whereSlug($slug)->firstOrFail();
+        Roleplay::destroy($system->id);
     }
 }
