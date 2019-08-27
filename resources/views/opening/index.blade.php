@@ -9,7 +9,9 @@
 @endsection
 @section('content')
   <div class="row">
+    <p>From Monday the 19<sup>th</sup>of August the club will also be open Mondays from 6pm.</p>
     <div class="col-md-8">
+        <time itemprop="openingHours" datetime="Mo 18:00-22:00"><span class="bold">Monday</span> 6pm - 10pm</time><br>
         <time itemprop="openingHours" datetime="Tu 17:00-22:00"><span class="bold">Tuesday</span> 5pm - 10pm</time><br>
         <time itemprop="openingHours" datetime="Th 17:00-22:00"><span class="bold">Thursday</span> 5pm - 10pm</time><br>
     </div>
