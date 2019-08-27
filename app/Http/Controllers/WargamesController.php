@@ -34,10 +34,31 @@ class WargamesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+    $this->validate($request, [
+        'name'=> 'required',
+        'description'=> 'required',
+        'user_id'=> 'required',
+      ]);
+      $system = new Wargames;
+      $system->name = $request->name;
+      $system->description = Wargames::summernote_tidy($request->description);
+      //$system->user_id = $request->user_id;
+      $system->slug = str_slug($request->name);
+
+      //TODO tidy this up
+      $latestSlug = Wargames::whereRaw("slug RLIKE '^{$system->slug}(-[0-9]*)?$'")
+        ->latest('id')
+        ->value('slug');
+      if($latestSlug){
+        $pieces = explode('-',$latestSlug);
+        $number = intval(end($pieces));
+        $system->slug .= '-' . ($number + 1);
+      }
+      $system->save();
+      return redirect("/wargaming/{$system->slug}");
     }
+    
 
     /**
      * Display the specified resource.
@@ -46,9 +67,8 @@ class WargamesController extends Controller
      * @return \Illuminate\Http\Response
      */
      function show($slug){
-       // return view('news.show',compact(News::whereSlug($slug)->firstOrFail()));
        $system = Wargames::whereSlug($slug)->firstOrFail();
-       return view('wargaming.show',compact('system','archive'));
+       return view('wargaming.show',compact('system'));
      }
 
     /**
@@ -57,9 +77,10 @@ class WargamesController extends Controller
      * @param  \App\Wargames  $wargames
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wargames $wargames)
+    public function edit($slug)
     {
-        //
+        $system = Wargames::whereSlug($slug)->firstOrFail();
+        return view('wargames.edit',compact('system'));
     }
 
     /**
@@ -80,8 +101,10 @@ class WargamesController extends Controller
      * @param  \App\Wargames  $wargames
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wargames $wargames)
+    function destroy($slug)
     {
-        //
+      $system = Wargames::whereSlug($slug)->firstOrFail();
+      Wargames::destroy($article->id);
+      return redirect("/news");
     }
 }
