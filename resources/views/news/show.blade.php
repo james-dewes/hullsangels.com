@@ -19,6 +19,9 @@
 @section('title')
   {{$article->title}}
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('article',$article) }}
+@endsection
 @section('content')
 <div class="container">
   <div class="row">

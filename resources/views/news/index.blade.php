@@ -10,6 +10,9 @@
 @section('title')
   News and Updates
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('news') }}
+@endsection
 @section('content')
 <div class="row">
      <div class="col-md-10">

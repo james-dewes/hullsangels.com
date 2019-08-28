@@ -10,6 +10,9 @@
 @section('title')
   Events at Hull's Angels
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('events') }}
+@endsection
 @section('content')
   <div class="container">
     <div class="row">

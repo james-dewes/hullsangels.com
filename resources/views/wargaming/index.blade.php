@@ -7,6 +7,9 @@
 @section('title')
 Wargame Systems played at Hull's Angels Wargaming Club
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('wargames') }}
+@endsection
 @section('content')
   <div class="container">
     <div class="row">

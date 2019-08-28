@@ -6,6 +6,9 @@
 @section('title')
   Role Play at Hull's Angels
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('roleplays') }}
+@endsection
 @section('content')
             <p>Hull's Angels plays host to Hull's chapter of <a herf='http://www.vaguenet.com/roleplay/'>Vague</a></p>
             <p>Join the Vague role players as they delve into some of the most popular systems around.<p/>

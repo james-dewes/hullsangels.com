@@ -41,6 +41,8 @@
         @yield('title')
         </h1>
         <hr>
+        @yield('breadcrumb')
+        
       @endif
       @yield('content')
     </main>

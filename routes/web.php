@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index')->name('home');
-Route::get('/news', 'NewsController@index');
+Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/create', 'NewsController@create')->middleware('auth:admin');
 Route::get('/news/{article}', 'NewsController@show');
 Route::get('/news/{article}/edit', 'NewsController@edit')->middleware('auth:admin');
@@ -20,7 +20,7 @@ Route::post('/news', 'NewsController@store')->middleware('auth:admin');
 Route::patch('/news/{article}', 'NewsController@update')->middleware('auth:admin');
 Route::delete('/news/{article}', 'NewsController@destroy')->middleware('auth:admin');
 
-Route::get('/events', 'EventsController@index');
+Route::get('/events', 'EventsController@index')->name('events');
 Route::get('/events/create', 'EventsController@create')->middleware('auth:admin');
 Route::get('/events/{event}', 'EventsController@show');
 Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('auth:admin');
@@ -48,14 +48,14 @@ Route::post('/opening-times', 'OpeningController@store')->middleware('auth:admin
 Route::patch('/opening-times/{system}', 'OpeningController@update')->middleware('auth:admin');
 Route::delete('/opening-times/{system}', 'OpeningController@destroy')->middleware('auth:admin');
 
-Route::get('/wargaming', 'WargamesController@index');
+Route::get('/wargaming', 'WargamesController@index')->name('wargames');
 Route::get('/wargaming/create', 'WargamesController@create')->middleware('auth:admin');
 Route::get('/wargaming/{system}', 'WargamesController@show');
 Route::post('/wargaming', 'WargamesController@store')->middleware('auth:admin');
 Route::patch('/wargaming/{system}', 'WargamesController@update')->middleware('auth:admin');
 Route::delete('/wargaming/{system}', 'WargamesController@destroy')->middleware('auth:admin');
 
-Route::get('/roleplaying', 'RoleplayController@index');
+Route::get('/roleplaying', 'RoleplayController@index')->name('roleplays');
 Route::get('/roleplaying/create', 'RoleplayController@create')->middleware('auth:admin');
 Route::get('/roleplaying/{system}', 'RoleplayController@show');
 Route::post('/roleplaying', 'RoleplayController@store')->middleware('auth:admin');

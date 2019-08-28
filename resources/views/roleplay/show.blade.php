@@ -5,6 +5,9 @@
 @section('title')
   {{$system->name}}
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('roleplay',$system) }}
+@endsection
 @section('content')
 <div class="container">
  <div class="row">

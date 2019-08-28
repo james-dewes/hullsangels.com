@@ -10,6 +10,9 @@
 @section('title')
 {{$event->name}}
 @endsection
+@section('breadcrumb')
+  {{ Breadcrumbs::render('event',$event) }}
+@endsection
 @section('content')
 <div class="container" itemscope itemtype="https://schema.org/Event">
  <div class="row">
