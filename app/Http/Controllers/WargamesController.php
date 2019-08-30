@@ -44,7 +44,6 @@ class WargamesController extends Controller
         $system = new Wargames;
         $system->name = $request->name;
         $system->description = Wargames::summernote_tidy($request->description);
-        //$system->user_id = $request->user_id;
         $system->slug = str_slug($request->name);
 
         //TODO tidy this up
@@ -81,7 +80,7 @@ class WargamesController extends Controller
     public function edit($slug)
     {
         $system = Wargames::whereSlug($slug)->firstOrFail();
-        return view('wargames.edit', compact('system'));
+        return view('wargaming.edit', compact('system'));
     }
 
     /**
@@ -91,9 +90,9 @@ class WargamesController extends Controller
      * @param  \App\Wargames  $wargames
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wargames $wargames)
+    public function update(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

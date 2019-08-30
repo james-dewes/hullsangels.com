@@ -10,6 +10,17 @@
 @endsection
 @section('content')
 <div class="container">
+@auth('admin')
+  <div class="row">
+    <div class="col-md-12">
+    <form action="/wargaming/edit/{{$system->slug }}" method="GET">
+      <div class="form-group float-right">
+        <input type="submit" class="btn btn-primary" value="Edit">      
+      </div>
+     </form>
+    </div>
+  </div>
+@endauth
  <div class="row">
    <div class="col-md-12">
        <p>{!!$system->description!!}</p>

@@ -51,6 +51,7 @@ Route::delete('/opening-times/{system}', 'OpeningController@destroy')->middlewar
 Route::get('/wargaming', 'WargamesController@index')->name('wargames');
 Route::get('/wargaming/create', 'WargamesController@create')->middleware('auth:admin');
 Route::get('/wargaming/{system}', 'WargamesController@show');
+Route::get('/wargaming/edit/{system}', 'WargamesController@edit')->middleware('auth:admin');
 Route::post('/wargaming', 'WargamesController@store')->middleware('auth:admin');
 Route::patch('/wargaming/{system}', 'WargamesController@update')->middleware('auth:admin');
 Route::delete('/wargaming/{system}', 'WargamesController@destroy')->middleware('auth:admin');
