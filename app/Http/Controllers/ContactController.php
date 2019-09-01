@@ -50,10 +50,25 @@ class ContactController extends Controller
             'email' => 'required|email|max:255',
             'subject' => 'required|string|exists:contact_options,subject',
             'message' => 'required|string',
-            'terms' => 'required|accepted'
+            'terms' => 'required|accepted',
+            'g-recaptcha-response' => 'required'
+
         ]);
+        //validate the Recapatcha
+        //Post params
+        $data = [
+            'secret' => env('CAPTCHA__VERIFICATION_KEY'),
+            'response' => $request->g-recaptcha-response
+        ];
+        $client = new \GuzzleHttp\Client();
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $request = $client->post($url,  ['body'=>$data]);
+        $response = $request->send();
+      
+        dd($response);
+        Post::make($data)->resolve();
+        
         $subjects = ContactOption::pluck('subject');
-        // TODO: send mail
         $this->mailer->acknowledge($request);
         $this->mailer->notifyCommittee($request);
 

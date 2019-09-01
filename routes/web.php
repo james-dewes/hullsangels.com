@@ -63,10 +63,10 @@ Route::patch('/roleplaying/{system}', 'RoleplayController@update')->middleware('
 Route::delete('/roleplaying/{system}', 'RoleplayController@destroy')->middleware('auth:admin');
 
 Route::get('/contact', 'ContactController@index');
-Route::get('/contact/create', 'ContactController@create')->middleware('auth:admin');;
-Route::post('/contact', 'ContactController@store')->middleware('auth:admin');;
-Route::patch('/contact/{system}', 'ContactController@update')->middleware('auth:admin');;
-Route::delete('/contact/{system}', 'ContactController@destroy')->middleware('auth:admin');;
+Route::get('/contact/create', 'ContactController@create')->middleware('auth:admin');
+Route::post('/contact', 'ContactController@store');
+Route::patch('/contact/{system}', 'ContactController@update')->middleware('auth:admin');
+Route::delete('/contact/{system}', 'ContactController@destroy')->middleware('auth:admin');
 Route::get('/terms', function () {return view('terms');});
 
 Route::get('/search/', 'SearchController@index');
