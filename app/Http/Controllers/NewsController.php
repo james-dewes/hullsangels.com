@@ -20,6 +20,10 @@ class NewsController extends Controller
     function create(){
       return view('news.create');
     }
+    function update(Request $request)
+    {
+      dd($request);
+    }
 
     function store(Request $request){
       $this->validate($request, [

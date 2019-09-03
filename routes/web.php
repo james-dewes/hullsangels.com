@@ -15,7 +15,7 @@ Route::get('/', 'IndexController@index')->name('home');
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/create', 'NewsController@create')->middleware('auth:admin');
 Route::get('/news/{article}', 'NewsController@show');
-Route::get('/news/{article}/edit', 'NewsController@edit')->middleware('auth:admin');
+Route::get('/news/edit/{article}', 'NewsController@edit')->middleware('auth:admin');
 Route::post('/news', 'NewsController@store')->middleware('auth:admin');
 Route::patch('/news/{article}', 'NewsController@update')->middleware('auth:admin');
 Route::delete('/news/{article}', 'NewsController@destroy')->middleware('auth:admin');

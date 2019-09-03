@@ -24,6 +24,17 @@
 @endsection
 @section('content')
 <div class="container">
+  @auth('admin')
+    <div class="row">
+      <div class="col-md-12">
+      <form action="/news/edit/{{$article->slug }}" method="GET">
+        <fieldset class="form-group float-right">
+          <input type="submit" class="btn btn-primary" value="Edit">      
+        </fieldset>
+      </form>
+      </div>
+    </div>
+  @endauth
   <div class="row">
     <div class="col-md-10">
       <div class="row">

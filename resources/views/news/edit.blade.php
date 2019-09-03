@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.master')
 @section('title')
   Edit {{$article->title}}
 @endsection
@@ -7,7 +7,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-12">
-    <form method="POST" action="/news">
+    <form method="POST" action="/news/{{ $article->slug }}">
+        <input type="hidden" name="_method" value="patch" />
         {{csrf_field()}}
         <div class="form-group float-right">
         <button type="submit" class="btn btn-primary ">Update</button>
