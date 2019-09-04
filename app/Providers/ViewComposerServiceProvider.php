@@ -47,19 +47,27 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeNewsArchive()
     {
         view()->composer('news.*',function($view){
-            $view->with('archives', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published   ')
+            $view->with('archivesGroups', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published   ')
                  ->groupby('year','month')
                  ->orderByRaw('min(created_at) desc')
-                 ->get());
+                 ->get())
+                 ->with('archives', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, title name, slug')
+                //  ->orderByRaw('min(created_at) desc')
+                 ->get())
+                 ->with('type','news');
         });
     }
     private function composeEventsArchive()
     {
         view()->composer('events.*',function($view){
-            $view->with('archives', \App\Events::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
+            $view->with('archivesGroups', \App\Events::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
                  ->groupby('year','month')
                  ->orderByRaw('min(created_at) desc')
-                 ->get());
+                 ->get())     
+                 ->with('archives', \App\Events::selectRaw('year(created_at) year , monthname(created_at) month, name, slug')
+                 //  ->orderByRaw('min(created_at) desc')
+                ->get())
+                ->with('type','events');
         });
     }
 }

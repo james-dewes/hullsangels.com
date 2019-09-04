@@ -322,3 +322,6 @@ h2 a:hover {
   padding: 0;  
   margin: 0;
 }
+.pointer{
+  cursor: pointer;
+}
