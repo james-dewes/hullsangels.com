@@ -11,9 +11,11 @@
         <a onclick="Fold(this)">{{$status->month}} {{$status->year}} ({{$status->published}})</a>
             <ol class="list-unstyled mb-0 hidden">
                 @foreach($archives as $link)
-                    <li>
-                        <a href="/{{$type}}/{{$link->slug}}">{{$link->name}}</a>
-                    </li>
+                    @if($status->month == $link->month && $status->year == $link->year)
+                        <li>
+                            <a href="/{{$type}}/{{$link->slug}}">{{$link->name}}</a>
+                        </li>
+                    @endif
                 @endforeach
             </ol>
         </li>
