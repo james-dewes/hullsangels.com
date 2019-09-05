@@ -14,7 +14,7 @@ window.cookieconsent.initialise({
   "theme": "edgeless",
   "type": "opt-in",
   "content": {
-    "message": "To see how the site is used we use cookies and collect a limited amount of information on you with Google Analytics.",
+    "message": "To see how the site is used we use cookies and collect a limited amount of information on you with Google Analytics and ReCAPTCHA.",
     "deny": "No thanks",
     "allow": "I am OK with this",
     "link": "Learn more",
