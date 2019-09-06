@@ -29,7 +29,7 @@
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" ></script>
-<script src='https://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+<script src='/js/fullcalendar.min.js'></script>
     {!! $calendar_details->script() !!}
 <script type="text/javascript">
 $('#calendar').fullCalendar({

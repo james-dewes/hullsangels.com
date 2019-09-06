@@ -8,11 +8,13 @@
     <ol class="list-unstyled mb-0">
         @foreach($archivesGroups as $status)
         <li class="text-primary pointer">
-        <a onclick="Fold(this)">{{$status->month}} {{$status->year}} ({{$status->published}})</a>
-            <ol class="list-unstyled mb-0 hidden">
+        <span class="font-weight-bold" onclick="Fold(this)">
+            <a>{{$status->month}} {{$status->year}} ({{$status->published}})</a>
+    </span>
+            <ol class="list-unstyled mb-0 hidden sidebar-links-list">
                 @foreach($archives as $link)
                     @if($status->month == $link->month && $status->year == $link->year)
-                        <li>
+                        <li class="sidebar-links">
                             <a href="/{{$type}}/{{$link->slug}}">{{$link->name}}</a>
                         </li>
                     @endif

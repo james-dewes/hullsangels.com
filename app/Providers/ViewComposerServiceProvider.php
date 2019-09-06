@@ -13,9 +13,9 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       $this->composeNavigation();
-       $this->composeNewsArchive();
-       $this->composeEventsArchive();
+        $this->composeNavigation();
+        $this->composeNewsArchive();
+        $this->composeEventsArchive();
     }
 
     /**
@@ -30,44 +30,46 @@ class ViewComposerServiceProvider extends ServiceProvider
 
     /**
      * Compose the Navigation view
-     * 
+     *
      * @return void
      */
     private function composeNavigation()
     {
-        view()->composer('layouts.nav',function($view){
-            $view->with('nav', ['wargames'=>\App\Wargames::all()]);
+        view()->composer('layouts.nav', function ($view) {
+            $view->with('nav', ['wargames' => \App\Wargames::all()]);
         });
     }
-     /**
-     * Compose the News arcive
-     * 
-     * @return void
-     */
+
+    /**
+    * Compose the News arcive
+    *
+    * @return void
+    */
     private function composeNewsArchive()
     {
-        view()->composer('news.*',function($view){
+        view()->composer('news.*', function ($view) {
             $view->with('archivesGroups', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published   ')
-                 ->groupby('year','month')
+                 ->groupby('year', 'month')
                  ->orderByRaw('min(created_at) desc')
                  ->get())
                  ->with('archives', \App\News::selectRaw('year(created_at) year , monthname(created_at) month, title name, slug')
                 //  ->orderByRaw('min(created_at) desc')
                  ->get())
-                 ->with('type','news');
+                 ->with('type', 'news');
         });
     }
+
     private function composeEventsArchive()
     {
-        view()->composer('events.*',function($view){
-            $view->with('archivesGroups', \App\Events::selectRaw('year(created_at) year , monthname(created_at) month, count(*) published')
-                 ->groupby('year','month')
+        view()->composer('events.*', function ($view) {
+            $view->with('archivesGroups', \App\Events::selectRaw('year(start) year , monthname(start) month, count(*) published')
+                 ->groupby('year', 'month')
                  ->orderByRaw('min(created_at) desc')
-                 ->get())     
-                 ->with('archives', \App\Events::selectRaw('year(created_at) year , monthname(created_at) month, name, slug')
+                 ->get())
+                 ->with('archives', \App\Events::selectRaw('year(start) year , monthname(start) month, name, slug')
                  //  ->orderByRaw('min(created_at) desc')
                 ->get())
-                ->with('type','events');
+                ->with('type', 'events');
         });
     }
 }
