@@ -37,13 +37,18 @@
 <body>
     @include('layouts.nav')
     <main class="container">
+      <div class="row">
+        <div class="col-md-7">
+          @yield('breadcrumb')
+        </div>
+        <div class="col-md-2">
+          <p class="text-right"> @yield('date')</p>
+        </div>
+      </div>
       @if (!Request::is('/'))
         <h1>
         @yield('title')
         </h1>
-        <hr>
-        @yield('breadcrumb')
-        
       @endif
       @yield('content')
     </main>

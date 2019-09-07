@@ -22,29 +22,25 @@
 @section('breadcrumb')
   {{ Breadcrumbs::render('article',$article) }}
 @endsection
+@section('date')
+{{$article->created_at->toFormattedDateString()}}
+@endsection
 @section('content')
 <div class="container">
   @auth('admin')
     <div class="row">
       <div class="col-md-12">
-      <form action="/news/edit/{{$article->slug }}" method="GET">
-        <fieldset class="form-group float-right">
-          <input type="submit" class="btn btn-primary" value="Edit">      
-        </fieldset>
-      </form>
+        <form action="/news/edit/{{$article->slug }}" method="GET">
+          <fieldset class="form-group float-right">
+            <input type="submit" class="btn btn-primary" value="Edit">      
+          </fieldset>
+        </form>
       </div>
     </div>
   @endauth
   <div class="row">
     <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-12">
-          <p class='date text-right'>{{$article->created_at->toFormattedDateString()}}</p>
-        </div>
-        <div class="col-md-21">
-          <p>{!!$article->content!!}</p>
-        </div>
-      </div>
+      <p>{!!$article->content!!}</p>
     </div>
     @include('layouts.sidebar')
   </div>

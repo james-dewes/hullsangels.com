@@ -40,11 +40,11 @@ Breadcrumbs::for('wargame', function ($trail, $system) {
 
 // Roleplays
 Breadcrumbs::for('roleplays', function ($trail) {
-    $trail->push('Roleplays', route('roleplays'));
+    $trail->push('Roleplaying', route('roleplays'));
 });
 
 // Roleplay
 Breadcrumbs::for('roleplay', function ($trail, $system) {
-    $trail->parent('Roleplays', route('roleplays'));
+    $trail->parent('Roleplaying', route('roleplays'));
     $trail->push($system->name, secure_url('roleplays/' . $system->slug));
 });
