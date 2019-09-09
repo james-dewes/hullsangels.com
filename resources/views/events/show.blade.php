@@ -22,10 +22,10 @@
     "sameAs": "https://hullsangels.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Unit 2, 14-18 Grimston Street",
-      "addressLocality": "Kigston Upon Hull",
+      "streetAddress": "1-3 Charlotte Street Mews",
+      "addressLocality": "Hull",
       "addressRegion": "East Yorkshire",
-      "postalCode": "HU1 3HG",
+      "postalCode": "HU1 3BP",
       "addressCountry": "UK"
     }
   }
