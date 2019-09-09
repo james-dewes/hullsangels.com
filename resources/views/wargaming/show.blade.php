@@ -23,7 +23,7 @@
 @endauth
  <div class="row">
    <div class="col-md-12">
-       <p>{!!$system->description!!}</p>
+       {!!$system->description!!}
    </div>
  </div>
 @endsection

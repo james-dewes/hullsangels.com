@@ -333,3 +333,7 @@ h2 a:hover {
   -webkit-margin-collapse: collapse;
   /* border-bottom: 1px solid grey; */
 }
+main img{
+     max-width: 100%;
+     height: auto;
+}
