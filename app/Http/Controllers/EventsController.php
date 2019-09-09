@@ -112,6 +112,7 @@ class EventsController extends Controller
       $event->endTime = date('H:i', strtotime($event->end));
       $event->utcStart = date('Y-m-dTH:i', strtotime($event->start));
       $event->utcEnd = date('Y-m-dTH:i', strtotime($event->end));
+      $event->mainImage = 'https://hullsangels.com/img/logo.png';
       return view('events.show',compact('event'));
     }
     /**

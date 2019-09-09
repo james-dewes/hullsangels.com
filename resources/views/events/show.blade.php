@@ -6,6 +6,31 @@
 <meta name="twitter:title" content="{{$event->name}}">
 <meta name="twitter:description" content="{{$event->getShortAttribute('description')}} from {{$event->start}}">
 <meta name="twitter:image" content="https://hullsangels.com/img/logo.png">
+<script type='application/ld+json'> 
+{
+  "@context": "https://www.schema.org",
+  "@type": "Event",
+  "name": "{{$event->name}}",
+  "url": "https://hullsangels.com/events/{{$event->slug}}",
+  "description": "{{$event->description}}",
+  "startDate": "{{$event->utcStart}}",
+  "endDate": "{{$event->utcEnd}}",
+  "image": "{{$event->mainImage}}",
+  "location": {
+    "@type": "Place",
+    "name": "Hull's Angels",
+    "sameAs": "https://hullsangels.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unit 2, 14-18 Grimston Street",
+      "addressLocality": "Kigston Upon Hull",
+      "addressRegion": "East Yorkshire",
+      "postalCode": "HU1 3HG",
+      "addressCountry": "UK"
+    }
+  }
+}
+ </script>
 @endsection
 @section('title')
 {{$event->name}}
@@ -14,22 +39,8 @@
   {{ Breadcrumbs::render('event',$event) }}
 @endsection
 @section('content')
-<div class="container" itemscope itemtype="https://schema.org/Event">
  <div class="row">
    <div class="col-md-12">
-      <meta itemprop="name" content="{{$event->name}}" />
-      <meta itemprop="startDate" content="{{$event->utcStart}}" />
-      <meta itemprop="endDate" content="{{$event->utcEnd}}" />
-      <div itemprop="location" itemscope>
-        <div itemprop="PostalAddress" itemscope itemtype="schema.org/PostalAddress">
-          <meta itemprop="streetAddress" value="Unit 2,14-18,Grimston,Street"/>
-          <meta itemprop="addressLocality" value="Kigston Upon Hull"/>
-          
-          <meta itemprop="addressLocality" value="East Yorkshire"/>
-          <meta itemprop="addressCountry" value="United Kingdom"/>
-          <meta itemprop="postalCode" value="HU1 3HG"/>
-        </div>
-      </div>
        <p class='date'>
            {{$event->startDate}}
            {{$event->startTime}}
