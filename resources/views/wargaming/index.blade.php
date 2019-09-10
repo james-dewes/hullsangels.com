@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-    <meta name="description" value="Visit Hull's Angels to join in games of Warhammer 40k, Bolt Action, Warmachine, Age of Sigmar, Necromunda, Blood Bowl, Dreadball, Kings of War Malifaux and more.">
-    <meta name="keywords" value="warhammer 40k, warhammer 40000, aos, age of sigmar, necromunda, mordhiem, warmachine, hordes, bolt action, rumbleslam, shadow war,blood bowl, dreadball">
+    <meta name="description" content="Visit Hull's Angels to join in games of Warhammer 40k, Bolt Action, Warmachine, Age of Sigmar, Necromunda, Blood Bowl, Dreadball, Kings of War Malifaux and more.">
+    <meta name="keywords" content="warhammer 40k, warhammer 40000, aos, age of sigmar, necromunda, mordhiem, warmachine, hordes, bolt action, rumbleslam, shadow war,blood bowl, dreadball">
     <title>Game Systems at Hull's Angels</title>
 @endsection
 @section('title')

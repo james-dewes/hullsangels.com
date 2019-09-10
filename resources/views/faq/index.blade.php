@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-    <meta name="description" value="All of the FAQ for Hull's Angels club, what to do when you forget your kit, who is in charge and what do we do.">
-    <meta name="keywords" value="hull's angels faq, wargames faq, hull's angels club faq, wargaming club faq">
+    <meta name="description" content="All of the FAQ for Hull's Angels club, what to do when you forget your kit, who is in charge and what do we do.">
+    <meta name="keywords" content="hull's angels faq, wargames faq, hull's angels club faq, wargaming club faq">
     <title>Hull's Angels FAQs</title>
     <script>
       function faqFold(element){

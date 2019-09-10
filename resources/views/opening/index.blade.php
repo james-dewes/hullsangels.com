@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-    <meta name="description" value="Find out when Hull's Angels is open to the public, weekdays and weekends. Find times and notices to varations in opening hours here.">
-    <meta name="keywords" value="hull's angels, times, opening, opening times, opening hours, when do you open">
+    <meta name="description" content="Find out when Hull's Angels is open to the public, weekdays and weekends. Find times and notices to varations in opening hours here.">
+    <meta name="keywords" content="hull's angels, times, opening, opening times, opening hours, when do you open">
     <title>Hull's Angels Opening Times</title>
 @endsection
 @section('title')

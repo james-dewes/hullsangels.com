@@ -1,8 +1,8 @@
 
 @extends('layouts.master')
 @section('meta')
-<meta name="description" value="Hull's Angels Events Calender. Check the latest events, download rules packs, check timings and more.">
-<meta name="keywords" value="hull's angels, events, hull events, hull whats on">
+<meta name="description" content="Hull's Angels Events Calender. Check the latest events, download rules packs, check timings and more.">
+<meta name="keywords" content="hull's angels, events, hull events, hull whats on">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.css" media="print">
 <title>Hull's Angels Events</title>

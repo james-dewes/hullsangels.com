@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('meta')
-        <meta name="description" value="Visit Hull's Angels to join Vague in thrilling tales of daring do, gritty drama and rawkus fun  whatever role playing system they are playing.">
-        <meta name="keywords" value="vauge,vauge conceptions,roleplay games">
+        <meta name="description" content="Visit Hull's Angels to join Vague in thrilling tales of daring do, gritty drama and rawkus fun  whatever role playing system they are playing.">
+        <meta name="keywords" content="vauge,vauge conceptions,roleplay games">
 @endsection
 @section('title')
   Role Play at Hull's Angels
