@@ -77,7 +77,7 @@ class EventsController extends Controller
       ]);
       $event = new Events;
       $event->name = $request->name;
-      $event->description = $request->description;
+      $event->description = Events::summernote_tidy($request->description);
       $event->user_id = $request->user_id;
       $event->start = $request->start;
       $event->end = $request->end;
