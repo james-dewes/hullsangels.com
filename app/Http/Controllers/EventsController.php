@@ -82,17 +82,7 @@ class EventsController extends Controller
       $event->start = $request->start;
       $event->end = $request->end;
       $event->slug = str_slug($request->name);
-
-      //TODO tidy this up
-      $latestSlug = Events::whereRaw("slug RLIKE '^{$event->slug}(-[0-9]*)?$'")
-        ->latest('id')
-        ->value('slug');
-        //dd($latestSlug);
-      if($latestSlug){
-        $pieces = explode('-',$latestSlug);
-        $number = intval(end($pieces));
-        $event->slug .= '-' . ($number + 1);
-      }
+      $event->checkSlugIsUnique();
       $event->save();
       return redirect("/events/{$event->slug}");
     }

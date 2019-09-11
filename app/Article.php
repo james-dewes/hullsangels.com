@@ -66,6 +66,15 @@ class Article extends Model
     return $html;
 }
 
-
-
+ public function checkSlugIsUnique()
+ {
+      $latestSlug = Article::whereRaw("slug RLIKE '^{$this->slug}(-[0-9]*)?$'")
+        ->latest('id')
+        ->value('slug');
+      if($latestSlug){
+        $pieces = explode('-',$latestSlug);
+        $number = intval(end($pieces));
+        $this->slug .= '-' . ($number + 1);
+      }
+ }
 }

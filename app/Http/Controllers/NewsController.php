@@ -14,7 +14,6 @@ class NewsController extends Controller
     function show($slug){
       $article = News::whereSlug($slug)->firstOrFail();
       return view('news.show', compact('article'));
-
     }
 
     function create(){
@@ -36,16 +35,7 @@ class NewsController extends Controller
       $article->content = News::summernote_tidy($request->content);
       $article->user_id = $request->user_id;
       $article->slug = str_slug($request->title);
-
-      //TODO tidy this up
-      $latestSlug = News::whereRaw("slug RLIKE '^{$article->slug}(-[0-9]*)?$'")
-        ->latest('id')
-        ->value('slug');
-      if($latestSlug){
-        $pieces = explode('-',$latestSlug);
-        $number = intval(end($pieces));
-        $article->slug .= '-' . ($number + 1);
-      }
+      $article->checkSlugIsUnique();
       $article->save();
       return redirect("/news/{$article->slug}");
     }
