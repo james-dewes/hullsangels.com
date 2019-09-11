@@ -64,7 +64,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composer('events.*', function ($view) {
             $view->with('archivesGroups', \App\Events::selectRaw('year(start) year , monthname(start) month, count(*) published')
                  ->groupby('year', 'month')
-                 ->orderByRaw('min(created_at) desc')
+                 ->orderByRaw('min(start) desc')
                  ->get())
                  ->with('archives', \App\Events::selectRaw('year(start) year , monthname(start) month, name, slug')
                  //  ->orderByRaw('min(created_at) desc')
