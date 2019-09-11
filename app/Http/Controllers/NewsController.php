@@ -14,14 +14,30 @@ class NewsController extends Controller
     function show($slug){
       $article = News::whereSlug($slug)->firstOrFail();
       return view('news.show', compact('article'));
+
     }
 
     function create(){
       return view('news.create');
     }
     function update(Request $request)
-    {
-      dd($request);
+    { 
+      $this->validate($request, [
+        'article_id'=> 'required',
+        'slug'=> 'required',
+        'title'=> 'required',
+        'title'=> 'required',
+        'content'=> 'required',
+        'user_id'=> 'required',
+      ]);     
+      $article = News::findOrFail($request->article_id);
+      $article->title = $request->title;
+      $article->content = News::summernote_tidy($request->content);
+      $article->user_id = $request->user_id;
+      $article->slug = str_slug($request->slug);
+      $article->checkSlugIsUnique();
+      $article->save();
+      return redirect("/news/{$article->slug}");
     }
 
     function store(Request $request){
@@ -35,7 +51,6 @@ class NewsController extends Controller
       $article->content = News::summernote_tidy($request->content);
       $article->user_id = $request->user_id;
       $article->slug = str_slug($request->title);
-      $article->checkSlugIsUnique();
       $article->save();
       return redirect("/news/{$article->slug}");
     }

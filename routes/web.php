@@ -23,7 +23,7 @@ Route::delete('/news/{article}', 'NewsController@destroy')->middleware('auth:adm
 Route::get('/events', 'EventsController@index')->name('events');
 Route::get('/events/create', 'EventsController@create')->middleware('auth:admin');
 Route::get('/events/{event}', 'EventsController@show');
-Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('auth:admin');
+Route::get('/events/edit/{event}', 'EventsController@edit')->middleware('auth:admin');
 Route::post('/events', 'EventsController@store')->middleware('auth:admin');
 Route::patch('/events/{event}', 'EventsController@update')->middleware('auth:admin');
 Route::delete('/events/{event}', 'EventsController@destroy')->middleware('auth:admin');

@@ -39,6 +39,17 @@
   {{ Breadcrumbs::render('event',$event) }}
 @endsection
 @section('content')
+@auth('admin')
+  <div class="row">
+    <div class="col-md-12">
+      <form action="/events/edit/{{$event->slug }}" method="GET">
+        <fieldset class="form-group float-right">
+          <input type="submit" class="btn btn-primary" value="Edit">      
+        </fieldset>
+      </form>
+    </div>
+  </div>
+@endauth
  <div class="row">
    <div class="col-md-12">
        <p class='date'>

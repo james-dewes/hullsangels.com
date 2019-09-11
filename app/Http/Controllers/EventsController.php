@@ -111,9 +111,10 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function edit(Events $events)
+    public function edit($slug)
     {
-        //
+      $event = Events::whereSlug($slug)->firstOrFail();
+      return view('events.edit',compact('event'));
     }
 
     /**
@@ -123,9 +124,25 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Events $events)
+    public function update(Request $request)
     {
-        //
+      $this->validate($request, [
+        'event_id' => 'required',
+        'name' => 'required',
+        'description' => 'required',
+        'start' => 'required',
+        'end' => 'required',
+        'user_id' => 'required',
+      ]);
+      $event = Events::findOrFail($request->event_id);
+      $event->name = $request->name;
+      $event->description = Events::summernote_tidy($request->description);
+      $event->user_id = $request->user_id;
+      $event->start = $request->start;
+      $event->end = $request->end;
+      $event->slug = str_slug($request->slug);
+      $event->save();
+      return redirect("/events/{$event->slug}");
     }
 
     /**
@@ -134,8 +151,10 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $events)
+    public function destroy($slug)
     {
-      Events::destroy($events->id);
+      $article = Events::whereSlug($slug)->firstOrFail();
+      Events::destroy($article->id);
+      return redirect("/events");
     }
 }
