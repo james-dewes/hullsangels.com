@@ -1,4 +1,9 @@
 @extends('layouts.master')
+@section('meta')
+<meta name="description" content="Search for {{$searchTerm}} on Hull's Angels">
+<meta name="keywords" content="search, hulls angels, hull, clubs, wargaming, roleplay, board games, {{$searchTerm}}">
+<title>Hull's Angels | {{$searchTerm}}</title>
+@endsection
 @section('title')
   Your search for "{{$searchTerm}}" returned {{count($results)}} results
 @endsection
