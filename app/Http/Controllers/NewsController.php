@@ -35,22 +35,22 @@ class NewsController extends Controller
       $article->content = News::summernote_tidy($request->content);
       $article->user_id = $request->user_id;
       $article->slug = str_slug($request->slug);
-      $article->checkSlugIsUnique();
       $article->save();
       return redirect("/news/{$article->slug}");
     }
-
+    
     function store(Request $request){
       $this->validate($request, [
         'title'=> 'required',
         'content'=> 'required',
         'user_id'=> 'required',
-      ]);
-      $article = new News;
-      $article->title = $request->title;
-      $article->content = News::summernote_tidy($request->content);
-      $article->user_id = $request->user_id;
-      $article->slug = str_slug($request->title);
+        ]);
+        $article = new News;
+        $article->title = $request->title;
+        $article->content = News::summernote_tidy($request->content);
+        $article->user_id = $request->user_id;
+        $article->slug = str_slug($request->title);
+        $article->checkSlugIsUnique();
       $article->save();
       return redirect("/news/{$article->slug}");
     }
