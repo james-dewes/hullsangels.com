@@ -77,4 +77,10 @@ class Article extends Model
         $this->slug .= '-' . ($number + 1);
       }
  }
+ public function getShortCleanAttribute(string $attribute)
+ {
+  $value = $this->getShortAttribute($attribute);
+  $value = preg_replace('#<[^>]+>#', ' ', $value);
+  return trim(preg_replace('/\s+/', ' ', $value));
+ }
 }
