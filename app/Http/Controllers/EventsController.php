@@ -33,6 +33,7 @@ class EventsController extends Controller
         $calendar_details = Calender::addEvents($event_list);
         $calendar_details->setOptions(
           [
+            'contentHeight'=>'auto',
             'height'=> 'parent',
             'businessHours'=> true, // TODO: make an object for this
             'nowIndicator'=> true, //TODO fix this
