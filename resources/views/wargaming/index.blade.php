@@ -5,31 +5,30 @@
     <title>Game Systems at Hull's Angels</title>
 @endsection
 @section('title')
-Wargame Systems played at Hull's Angels Wargaming Club
+  Wargame Systems played at Hull's Angels Wargaming Club
 @endsection
 @section('breadcrumb')
   {{ Breadcrumbs::render('wargames') }}
 @endsection
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p>Hull's Angels is a diverse group and the members play a wide variety of games and game systems.
-        Here you can find out what is commonly played at Hull's Angels and a little about each system</p>
-      </div>
-    </div>
-    @foreach ($wargames as $system)
-    <div class="row">
-      <div class="col-md-12">
-        <article>
-            <h2>
-              <a href="/wargaming/{{$system->slug}}">
-              {{$system->name}}
-              </a>
-            </h2>
-            {!!$system->getShortAttribute('description')!!}
-        </article>
-      </div>
-    </div>
-    @endforeach
+<div class="row">
+  <div class="col-md-12">
+    <p>Hull's Angels is a diverse group and the members play a wide variety of games and game systems.
+    Here you can find out what is commonly played at Hull's Angels and a little about each system</p>
+  </div>
+</div>  
+@foreach ($wargames as $system)
+<div class="row">
+  <div class="col-md-12">
+    <article>
+        <h2>
+          <a href="/wargaming/{{$system->slug}}">
+          {{$system->name}}
+          </a>
+        </h2>
+        {!!$system->getShortAttribute('description')!!}
+    </article>
+  </div>
+</div>
+@endforeach
 @endsection

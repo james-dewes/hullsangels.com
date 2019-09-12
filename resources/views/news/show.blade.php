@@ -3,18 +3,18 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@HullsAngelsClub" />
   <meta name="twitter:title" content="{{$article->title}}" />
-  <meta name="twitter:description" content='{{$article->getShortAttribute('content')}}' />
+  <meta name="twitter:description" content="{{strip_tags($article->getShortAttribute('content'))}}" />
   <meta name="twitter:image" content='https://hullsangels.com/img/logo.png' />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{$article->title}}"/>
   <meta property="article:published_time" content="{{$article->created_at->toFormattedDateString()}}"/>
   <meta property="og:image" content="https://hullsangels.com/img/logo.png"/>
-  <meta property="og:description" content="{{$article->getShortAttribute('content')}}"/>
+  <meta property="og:description" content="{{strip_tags($article->getShortAttribute('content'))}}"/>
   <meta property="og:url" content="{{URL::current()}}" />
-
-
-  <title>Hull's Angels | {{$article->title}}</title>
+  <meta name="keywords" content="{{$article->title}}, news, hull news, wargaming news}}">
+  <meta name="description" content="{{$article->title}} - {{strip_tags($article->getShortAttribute('content'))}}">
+  <title>{{$article->title}} | Hull's Angels</title>
 @endsection
 @section('title')
   {{$article->title}}
@@ -40,7 +40,7 @@
   @endauth
   <div class="row">
     <div class="col-md-10">
-      <p>{!!$article->content!!}</p>
+      {!!$article->content!!}
     </div>
     @include('layouts.sidebar')
   </div>

@@ -70,9 +70,9 @@ Route::patch('/contact/{system}', 'ContactController@update')->middleware('auth:
 Route::delete('/contact/{system}', 'ContactController@destroy')->middleware('auth:admin');;
 Route::get('/terms', function () {return view('terms');});
 
-Route::get('/search/', 'SearchController@index');
+Route::get('/search', 'SearchController@index');
 Route::get('/search/{searchTerm?}', 'SearchController@show');
-Route::post('/search/', 'SearchController@redirect');
+Route::post('/search','SearchController@redirect');
 
 //Auth::routes();
 Route::get('bunker', 'Admin\Auth\LoginController@showLoginForm')->name('admin/login');
