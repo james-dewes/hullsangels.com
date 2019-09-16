@@ -15,7 +15,14 @@
 @endsection
 @section('content')
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-10">
+    <p>Find answers to the most commonly asked questions about Hull's Angels. A handy guide for anyone considering visiting the 
+      club for the first time, or who is new to Hull's Angels and needs to check some details.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10">
     <dl class="faq">
       @foreach ($faqs as $faq)
       <dt onclick="faqFold(this)">{{$faq->question}}</dt>
