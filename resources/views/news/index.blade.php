@@ -16,13 +16,18 @@
 @section('content')
 <div class="row">
      <div class="col-md-10">
+       <p>Keep up with all of the latest wargaming and roleplaying news in and around the Hull gaming scene with updates from the Hull's Angels club.</p>
+     </div>
+</div>
+<div class="row">
+     <div class="col-md-10">
       @foreach ($articles as $article)
         <div class="row">
           <div class="col-md-12">
             <article>
               <h2 class="stencil">{{$article->title}}</h2>
               <p class='date'>{{$article->created_at->toFormattedDateString()}}</p>
-              <p>{!!$article->getShortAttribute('content')!!}</p>
+              {!!$article->getShortAttribute('content')!!}
               <a class="btn btn-secondary" href="/news/{{$article->slug}}" role="button">Read more »</a>
               <hr>
             </article>

@@ -1,18 +1,30 @@
 @extends('layouts.master')
+@section('meta')
+<!-- include summernote css-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+@endsection
 @section('title')
   Edit {{$article->title}}
 @endsection
 @section('content')
-<!-- include summernote css-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-12">
-    <form method="POST" action="/news/{{ $article->slug }}">
-        <input type="hidden" name="_method" value="patch" />
+    <form action="/news/{{$article->slug}}" method="POST">
+      <div class="form-group float-right">
+        <button type="submit" class="btn btn-primary ">Delete</button>
+        <input type="hidden" name="_method" value="DELETE">
         {{csrf_field()}}
-        <div class="form-group float-right">
-        <button type="submit" class="btn btn-primary ">Update</button>
-        </div>
+      </div>
+    </form>   
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <form action="/news/{{ $article->slug }}"  method="POST">
+        <input type="hidden" name="_method" value="patch" />
+        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+        <input type="hidden" name="article_id" value="{{$article->id}}">
+        {{csrf_field()}}
         <div class="form-group">
             <label for="title">Headline</label>
             <input type="text" class="form-control" id="title" name="title" value="{{$article->title}}" required>
@@ -25,16 +37,11 @@
             <label for="content">Content</label>
             <textarea name="content" id="content" class="form-control summernote" rows="8" cols="80" required>{{$article->content}}</textarea>
         </div>
-        <input type="hidden" name="user_id" value="1">
-        <input type="hidden" name="article_id" value="{{$article->id}}">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary ">Update</button>
+        </div>
         @include('layouts.errors')
     </form>
-
-    <form action="/news/{{$article->slug}}" method="POST">
-            <button type="submit" class="btn btn-primary ">Delete</button>
-            <input type="hidden" name="_method" value="DELETE">
-            {{csrf_field()}}
-    </form>   
   </div>
 </div>
 @endsection

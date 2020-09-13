@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 <form method="POST" action="/opening-times">
+      <input type="hidden" name="_method" value="patch" />
       {{csrf_field()}}
       <div class="row text-center">
         <div class="col-md-2">

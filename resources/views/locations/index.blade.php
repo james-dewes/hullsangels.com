@@ -16,10 +16,9 @@
 }
   </style>
     <title>Find Hull's Angels</title>
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_API')}}">
+    <script src="https://maps.googleapis.com/maps/api/js?key={{env('MAPS_API')}}">
     </script>
-    <script type="text/javascript">
+    <script>
     function initialize() {
         var myLatLng = {lat: 53.747277, lng: -0.336116};
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -53,7 +52,7 @@ Find Hull's Angels Wargaming Club
     <div class="col-md-12">
       <p>Situated it Hull's old YPI building you can find Hull's Angels at:</p>
       <div class="address" itemscope itemtype="http://schema.org/ContactPoint">
-        <div itemscope itemtype="schema.org/PostalAddress">
+        <div itemscope itemtype="https://schema.org/PostalAddress">
           <span itemprop="streetAddress">Unit 2<br>14-18<br>Grimston Street</span><br>
           <span itemprop="addressLocality">Kigston Upon Hull</span><br>
           <span itemprop="addressLocality">East Yorkshire</span><br>

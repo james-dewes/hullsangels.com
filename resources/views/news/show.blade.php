@@ -3,27 +3,29 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@HullsAngelsClub" />
   <meta name="twitter:title" content="{{$article->title}}" />
-  <meta name="twitter:description" content='{{$article->getShortAttribute('content')}}' />
+  <meta name="twitter:description" content="{{ $article->getShortCleanAttribute('content') }}" />
   <meta name="twitter:image" content='https://hullsangels.com/img/logo.png' />
 
   <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://hullsangels.com/news/{{ $article->slug }}" />
   <meta property="og:title" content="{{$article->title}}"/>
-  <meta property="article:published_time" content="{{$article->created_at->toFormattedDateString()}}"/>
+  <meta property="article:published_time" content="{{ $article->created_at->toFormattedDateString() }}"/>
+  <meta property="og:description" content="{{ $article->getShortCleanAttribute('content') }}"/>
   <meta property="og:image" content="https://hullsangels.com/img/logo.png"/>
-  <meta property="og:description" content="{{$article->getShortAttribute('content')}}"/>
-  <meta property="og:url" content="{{URL::current()}}" />
+  <meta property="fb:app_id" content="2309869772">
 
-
-  <title>Hull's Angels | {{$article->title}}</title>
+  <meta name="keywords" content="{{ $article->title }}, news, hull news, wargaming news}}">
+  <meta name="description" content="{{ $article->title }} - {{ $article->getShortCleanAttribute('content') }}">
+  <title>{{$article->title}} | Hull's Angels</title>
 @endsection
 @section('title')
-  {{$article->title}}
+  {{ $article->title }}
 @endsection
 @section('breadcrumb')
-  {{ Breadcrumbs::render('article',$article) }}
+  {{ Breadcrumbs::render('article', $article) }}
 @endsection
 @section('date')
-{{$article->created_at->toFormattedDateString()}}
+{{ $article->created_at->toFormattedDateString() }}
 @endsection
 @section('content')
 <div class="container">
@@ -40,7 +42,7 @@
   @endauth
   <div class="row">
     <div class="col-md-10">
-      <p>{!!$article->content!!}</p>
+      {!! $article->content !!}
     </div>
     @include('layouts.sidebar')
   </div>

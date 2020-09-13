@@ -23,7 +23,7 @@ Hull's Angels Wargaming Club
             @if($news != null)
             <h3>{{$news->title}}</h3>
             <p>{{$news->created_at->toFormattedDateString()}}</p>
-            <p>{!!$news->getShortAttribute('content')!!}</p>
+            {!!$news->getShortAttribute('content')!!}
             <p><a class="btn btn-secondary" href="/news/{{$news->slug}}" role="button">View details &raquo;</a></p>
             @endif
           </div>

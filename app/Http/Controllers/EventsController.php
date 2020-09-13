@@ -33,6 +33,7 @@ class EventsController extends Controller
         $calendar_details = Calender::addEvents($event_list);
         $calendar_details->setOptions(
           [
+            'contentHeight'=>'auto',
             'height'=> 'parent',
             'businessHours'=> true, // TODO: make an object for this
             'nowIndicator'=> true, //TODO fix this
@@ -82,17 +83,7 @@ class EventsController extends Controller
       $event->start = $request->start;
       $event->end = $request->end;
       $event->slug = str_slug($request->name);
-
-      //TODO tidy this up
-      $latestSlug = Events::whereRaw("slug RLIKE '^{$event->slug}(-[0-9]*)?$'")
-        ->latest('id')
-        ->value('slug');
-        //dd($latestSlug);
-      if($latestSlug){
-        $pieces = explode('-',$latestSlug);
-        $number = intval(end($pieces));
-        $event->slug .= '-' . ($number + 1);
-      }
+      $event->checkSlugIsUnique();
       $event->save();
       return redirect("/events/{$event->slug}");
     }
@@ -121,9 +112,10 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function edit(Events $events)
+    public function edit($slug)
     {
-        //
+      $event = Events::whereSlug($slug)->firstOrFail();
+      return view('events.edit',compact('event'));
     }
 
     /**
@@ -133,9 +125,25 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Events $events)
+    public function update(Request $request)
     {
-        //
+      $this->validate($request, [
+        'event_id' => 'required',
+        'name' => 'required',
+        'description' => 'required',
+        'start' => 'required',
+        'end' => 'required',
+        'user_id' => 'required',
+      ]);
+      $event = Events::findOrFail($request->event_id);
+      $event->name = $request->name;
+      $event->description = Events::summernote_tidy($request->description);
+      $event->user_id = $request->user_id;
+      $event->start = $request->start;
+      $event->end = $request->end;
+      $event->slug = str_slug($request->slug);
+      $event->save();
+      return redirect("/events/{$event->slug}");
     }
 
     /**
@@ -144,8 +152,10 @@ class EventsController extends Controller
      * @param  \App\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $events)
+    public function destroy($slug)
     {
-      Events::destroy($events->id);
+      $article = Events::whereSlug($slug)->firstOrFail();
+      Events::destroy($article->id);
+      return redirect("/events");
     }
 }

@@ -48,8 +48,8 @@
     @auth('admin')
       @include('admin.layouts.partials.nav')
     @endauth
-    <form class="form-inline my-2 my-lg-0" action="/search/" method="POST">
-      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
       {{ csrf_field() }}
       <button class="btn my-2 my-sm-0" type="submit">Search</button>
     </form>

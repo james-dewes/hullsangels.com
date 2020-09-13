@@ -11,9 +11,11 @@
   <div class="row">
     <p>From Monday the 19<sup>th</sup>of August the club will also be open Mondays from 6pm.</p>
     <div class="col-md-8">
-        <time itemprop="openingHours" datetime="Mo 18:00-22:00"><span class="bold">Monday</span> 6pm - 10pm</time><br>
-        <time itemprop="openingHours" datetime="Tu 17:00-22:00"><span class="bold">Tuesday</span> 5pm - 10pm</time><br>
-        <time itemprop="openingHours" datetime="Th 17:00-22:00"><span class="bold">Thursday</span> 5pm - 10pm</time><br>
+      <div itemscope itemtype="https://schema.org/openingHours">
+        <p><span itemprop="openingHours" content="Mo 18:00-22:00"><span class="font-weight-bold">Monday</span> 6pm - 10pm</span><br>
+           <span itemprop="openingHours" content="Tu 17:00-22:00"><span class="font-weight-bold">Tuesday</span> 5pm - 10pm</span><br>
+           <span itemprop="openingHours" content="Th 17:00-22:00"><span class="font-weight-bold">Thursday</span> 5pm - 10pm</span></p>
+      </div>
     </div>
   </div>
   <div class="row">

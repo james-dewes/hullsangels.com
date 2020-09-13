@@ -23,7 +23,7 @@ Route::delete('/news/{article}', 'NewsController@destroy')->middleware('auth:adm
 Route::get('/events', 'EventsController@index')->name('events');
 Route::get('/events/create', 'EventsController@create')->middleware('auth:admin');
 Route::get('/events/{event}', 'EventsController@show');
-Route::get('/events/{event}/edit', 'EventsController@edit')->middleware('auth:admin');
+Route::get('/events/edit/{event}', 'EventsController@edit')->middleware('auth:admin');
 Route::post('/events', 'EventsController@store')->middleware('auth:admin');
 Route::patch('/events/{event}', 'EventsController@update')->middleware('auth:admin');
 Route::delete('/events/{event}', 'EventsController@destroy')->middleware('auth:admin');
@@ -70,9 +70,9 @@ Route::patch('/contact/{system}', 'ContactController@update')->middleware('auth:
 Route::delete('/contact/{system}', 'ContactController@destroy')->middleware('auth:admin');;
 Route::get('/terms', function () {return view('terms');});
 
-Route::get('/search/', 'SearchController@index');
+Route::get('/search', 'SearchController@index');
 Route::get('/search/{searchTerm?}', 'SearchController@show');
-Route::post('/search/', 'SearchController@redirect');
+Route::post('/search','SearchController@redirect');
 
 //Auth::routes();
 Route::get('bunker', 'Admin\Auth\LoginController@showLoginForm')->name('admin/login');
